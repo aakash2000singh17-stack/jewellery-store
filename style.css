@@ -1,7 +1,8 @@
 body{
 margin:0;
 font-family:Arial;
-background:#faf6f2;
+background:#fff8f2;
+text-align:center;
 }
 
 .navbar{
@@ -10,131 +11,77 @@ justify-content:space-between;
 align-items:center;
 padding:15px 30px;
 background:white;
-box-shadow:0 2px 10px rgba(0,0,0,0.05);
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
 }
 
 .logo{
-font-size:22px;
-font-weight:bold;
 color:#b76e79;
+font-size:24px;
 }
 
 .menu{
+list-style:none;
 display:flex;
 gap:20px;
-list-style:none;
 }
 
 .menu a{
 text-decoration:none;
 color:#333;
+font-weight:bold;
 }
 
 .hero{
-position:relative;
-text-align:center;
+padding:80px 20px;
+background:#ffecec;
 }
 
-.hero img{
-width:100%;
-height:350px;
-object-fit:cover;
+.hero h1{
+font-size:42px;
+color:#b76e79;
 }
 
-.hero-text{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-color:white;
-}
-
-.shopbtn{
+.btn{
 background:#b76e79;
 color:white;
 border:none;
-padding:12px 20px;
+padding:12px 25px;
+font-size:16px;
+border-radius:6px;
+cursor:pointer;
+margin-top:10px;
+}
+
+.products{
+padding:40px;
+}
+
+.product{
+display:inline-block;
+background:white;
+padding:20px;
+margin:15px;
+border-radius:10px;
+box-shadow:0 0 10px rgba(0,0,0,0.1);
+width:220px;
+}
+
+.product img{
+width:200px;
+border-radius:8px;
+}
+
+button{
+background:#b76e79;
+color:white;
+border:none;
+padding:10px 20px;
 border-radius:5px;
 cursor:pointer;
 }
 
-.categories{
-padding:50px;
-text-align:center;
-}
-
-.category-grid{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:20px;
-}
-
-.category{
-text-decoration:none;
-color:black;
-}
-
-.category img{
-width:120px;
-height:120px;
-border-radius:50%;
-object-fit:cover;
-}
-
-.products{
-padding:50px;
-text-align:center;
-}
-
-.product-grid{
-display:flex;
-flex-wrap:wrap;
-justify-content:center;
-gap:25px;
-}
-
-.product{
-background:white;
-padding:15px;
-width:220px;
-border-radius:10px;
-box-shadow:0 0 10px rgba(0,0,0,0.1);
-}
-
-.product img{
-width:100%;
-height:200px;
-object-fit:cover;
-border-radius:8px;
-}
-
-.price{
-color:#b76e79;
-font-weight:bold;
-}
-
-.contact{
-text-align:center;
-padding:40px;
-background:white;
-}
-
 footer{
-background:#222;
-color:white;
-text-align:center;
+margin-top:40px;
 padding:20px;
-}
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-background:#25D366;
-color:white;
-font-size:24px;
-padding:15px;
-border-radius:50%;
-text-decoration:none;
+background:#f2f2f2;
 }
