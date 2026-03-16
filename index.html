@@ -10,17 +10,16 @@
 
 body{
 margin:0;
-font-family:Arial;
-background:#f5f5f5;
+font-family:Arial, Helvetica, sans-serif;
+background:#f4efec;
 }
 
 /* TOP BAR */
 
 .topbar{
-background:#7b5342;
+background:#3b2624;
 color:white;
 padding:8px;
-font-size:14px;
 overflow:hidden;
 white-space:nowrap;
 }
@@ -28,10 +27,10 @@ white-space:nowrap;
 .topbar span{
 display:inline-block;
 padding-left:100%;
-animation:move 15s linear infinite;
+animation:scroll 12s linear infinite;
 }
 
-@keyframes move{
+@keyframes scroll{
 0%{transform:translateX(0)}
 100%{transform:translateX(-100%)}
 }
@@ -42,54 +41,94 @@ animation:move 15s linear infinite;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:white;
 padding:15px 40px;
-box-shadow:0 2px 10px rgba(0,0,0,0.1);
+background:white;
 }
 
 .logo{
 font-size:22px;
 font-weight:bold;
+color:#5b3a36;
 }
 
-.menu a{
+.nav-links a{
 margin:0 15px;
 text-decoration:none;
-color:black;
+color:#333;
 }
 
-.navbtn button{
+.nav-buttons button{
 margin-left:10px;
 padding:8px 15px;
 border:none;
-background:#7b5342;
+background:#6b4a46;
 color:white;
-border-radius:4px;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* IMAGE SLIDER */
+
+.slider{
+width:100%;
+overflow:hidden;
+}
+
+.slides{
+display:flex;
+animation:slide 15s infinite;
+}
+
+.slides img{
+width:100%;
+height:350px;
+object-fit:cover;
+}
+
+@keyframes slide{
+
+0%{transform:translateX(0)}
+33%{transform:translateX(-100%)}
+66%{transform:translateX(-200%)}
+100%{transform:translateX(0)}
+
 }
 
 /* HERO */
 
 .hero{
-height:500px;
-background-size:cover;
-background-position:center;
-display:flex;
-align-items:center;
-justify-content:center;
+position:relative;
 text-align:center;
 color:white;
-transition:1s;
 }
 
-.hero h1{
-font-size:40px;
+.hero img{
+width:100%;
+height:450px;
+object-fit:cover;
 }
 
-.hero button{
-margin-top:20px;
-padding:12px 25px;
+.hero-text{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
+
+.hero-text h1{
+font-size:42px;
+margin:0;
+}
+
+.hero-text p{
+margin-top:10px;
+}
+
+.hero-text button{
+margin-top:15px;
+padding:10px 20px;
+background:#6b4a46;
 border:none;
-background:#7b5342;
 color:white;
 border-radius:5px;
 }
@@ -97,27 +136,25 @@ border-radius:5px;
 /* CATEGORY */
 
 .category{
-padding:50px 20px;
+padding:50px;
 text-align:center;
 }
 
-.category-row{
+.category-list{
 display:flex;
 justify-content:center;
 gap:40px;
-margin-top:30px;
-flex-wrap:wrap;
 }
 
-.cat{
-text-align:center;
-}
-
-.cat img{
+.category-item img{
 width:90px;
 height:90px;
 border-radius:50%;
 object-fit:cover;
+}
+
+.category-item p{
+margin-top:8px;
 }
 
 /* PRODUCTS */
@@ -127,62 +164,59 @@ padding:40px;
 text-align:center;
 }
 
-.product-row{
+.product-grid{
 display:flex;
-gap:25px;
 justify-content:center;
+gap:30px;
 flex-wrap:wrap;
-margin-top:30px;
 }
 
-.card{
+.product{
 background:white;
 padding:20px;
 border-radius:10px;
-width:230px;
-box-shadow:0 4px 15px rgba(0,0,0,0.1);
+width:220px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
 }
 
-.card img{
+.product img{
 width:100%;
-border-radius:10px;
+height:220px;
+object-fit:cover;
+border-radius:6px;
 }
 
-.card button{
+.product button{
 margin-top:10px;
-background:#7b5342;
+background:#6b4a46;
+color:white;
 border:none;
 padding:8px 15px;
-color:white;
 border-radius:4px;
+cursor:pointer;
 }
 
-/* INFO */
+/* CRAFTING */
 
-.info{
-background:#eae4e1;
-padding:50px;
+.crafting{
 text-align:center;
+padding:40px;
 }
 
 /* FOOTER */
 
 .footer{
-background:#7b5342;
+background:#6b4a46;
 color:white;
-display:flex;
-justify-content:space-around;
 padding:40px;
+display:flex;
+justify-content:space-between;
 flex-wrap:wrap;
 }
 
-.footer div{
-margin:10px;
-}
-
-.pay img{
-width:50px;
-margin-right:8px;
+.payment-icons img{
+width:45px;
+margin-right:10px;
 }
 
 /* WHATSAPP */
@@ -191,12 +225,10 @@ margin-right:8px;
 position:fixed;
 bottom:20px;
 right:20px;
-background:#25D366;
-color:white;
-padding:12px 15px;
-border-radius:50%;
-font-size:20px;
-text-decoration:none;
+}
+
+.whatsapp img{
+width:55px;
 }
 
 </style>
@@ -208,7 +240,7 @@ text-decoration:none;
 <!-- TOP BAR -->
 
 <div class="topbar">
-<span>✨ Welcome to Nitose Jewellery – Premium Anti Tarnish Jewellery – Shop Now ✨</span>
+<span>Premium Anti-Tarnish Jewellery | Free Shipping Above ₹999 | New Collection Live</span>
 </div>
 
 <!-- NAVBAR -->
@@ -217,25 +249,43 @@ text-decoration:none;
 
 <div class="logo">Nitose</div>
 
-<div class="menu">
+<div class="nav-links">
 <a href="#">Home</a>
 <a href="#">Categories</a>
 <a href="#">Products</a>
 <a href="#">Contact</a>
 </div>
 
-<div class="navbtn">
+<div class="nav-buttons">
 <button>Sign In</button>
 <button>Cart</button>
 </div>
 
 </div>
 
+<!-- IMAGE SLIDER -->
+
+<div class="slider">
+
+<div class="slides">
+
+<img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d">
+
+<img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
+
+<img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
+
+</div>
+
+</div>
+
 <!-- HERO -->
 
-<div class="hero" id="hero">
+<div class="hero">
 
-<div>
+<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
+
+<div class="hero-text">
 <h1>Luxury Jewellery Collection</h1>
 <p>Elegant designs for every occasion</p>
 <button>Shop Now</button>
@@ -249,30 +299,30 @@ text-decoration:none;
 
 <h2>Shop by Category</h2>
 
-<div class="category-row">
+<div class="category-list">
 
-<div class="cat">
-<img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d">
+<div class="category-item">
+<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
 <p>Earrings</p>
 </div>
 
-<div class="cat">
-<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
+<div class="category-item">
+<img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
 <p>Pendants</p>
 </div>
 
-<div class="cat">
-<img src="https://images.unsplash.com/photo-1602752250015-52934bc45613">
+<div class="category-item">
+<img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
 <p>Necklace</p>
 </div>
 
-<div class="cat">
-<img src="https://images.unsplash.com/photo-1617038260897-41a1f14a2f84">
+<div class="category-item">
+<img src="https://images.unsplash.com/photo-1588444650733-d7d9e5b27f02">
 <p>Bracelets</p>
 </div>
 
-<div class="cat">
-<img src="https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d">
+<div class="category-item">
+<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
 <p>Combo Sets</p>
 </div>
 
@@ -286,24 +336,24 @@ text-decoration:none;
 
 <h2>Featured Products</h2>
 
-<div class="product-row">
+<div class="product-grid">
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d">
+<div class="product">
+<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
 <h4>Gold Drop Earrings</h4>
 <p>₹199</p>
 <button>Pay Now</button>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1602752250015-52934bc45613">
+<div class="product">
+<img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
 <h4>Diamond Pendant</h4>
 <p>₹299</p>
 <button>Pay Now</button>
 </div>
 
-<div class="card">
-<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
+<div class="product">
+<img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
 <h4>Luxury Necklace</h4>
 <p>₹499</p>
 <button>Pay Now</button>
@@ -313,16 +363,13 @@ text-decoration:none;
 
 </div>
 
-<!-- INFO -->
+<!-- CRAFTING -->
 
-<div class="info">
+<div class="crafting">
 
 <h2>Crafting Everyday Luxury</h2>
 
-<p>
-Nitose jewellery is designed to bring elegance to your everyday style.
-Premium anti-tarnish jewellery for modern women.
-</p>
+<p>Nitose jewellery is designed to bring elegance to your everyday style. Premium anti-tarnish jewellery for modern women.</p>
 
 </div>
 
@@ -343,16 +390,20 @@ Premium anti-tarnish jewellery for modern women.
 <p>Instagram: nitose_official</p>
 </div>
 
-<div class="pay">
+<div>
 <h3>We Accept</h3>
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg">
+<div class="payment-icons">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg">
+<img src="https://img.icons8.com/color/48/visa.png">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Google_Pay_logo.svg">
+<img src="https://img.icons8.com/color/48/mastercard.png">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/7/71/UPI-Logo-vector.svg">
+<img src="https://img.icons8.com/color/48/google-pay.png">
+
+<img src="https://img.icons8.com/color/48/bhim.png">
+
+</div>
 
 </div>
 
@@ -360,38 +411,11 @@ Premium anti-tarnish jewellery for modern women.
 
 <!-- WHATSAPP -->
 
-<a class="whatsapp" href="https://wa.me/919625979565">W</a>
+<a href="https://wa.me/919625979565" class="whatsapp">
 
-<!-- HERO SLIDER -->
+<img src="https://img.icons8.com/color/96/whatsapp.png">
 
-<script>
-
-let images=[
-"https://images.unsplash.com/photo-1602752250015-52934bc45613",
-"https://images.unsplash.com/photo-1617038220319-276d3cfab638",
-"https://images.unsplash.com/photo-1611652022419-a9419f74343d",
-"https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d"
-]
-
-let i=0
-
-function slide(){
-
-document.getElementById("hero").style.backgroundImage="url("+images[i]+")"
-
-i++
-
-if(i==images.length){
-i=0
-}
-
-}
-
-setInterval(slide,3000)
-
-slide()
-
-</script>
+</a>
 
 </body>
 </html>
