@@ -49,7 +49,6 @@ background:white;
 font-size:22px;
 font-weight:bold;
 color:#5b3a36;
-text-decoration:none;
 }
 
 .nav-links a{
@@ -89,8 +88,10 @@ object-fit:cover;
 }
 
 @keyframes slide{
+
 0%{transform:translateX(0)}
 100%{transform:translateX(-200%)}
+
 }
 
 /* HERO */
@@ -149,8 +150,6 @@ flex-wrap:wrap;
 
 .category-item{
 cursor:pointer;
-text-decoration:none;
-color:black;
 }
 
 .category-item img{
@@ -250,33 +249,30 @@ width:55px;
 
 <div class="navbar">
 
-<a href="index.html" class="logo">Nitose</a>
+<div class="logo" onclick="goHome()">Nitose</div>
 
 <div class="nav-links">
-<a href="index.html">Home</a>
-<a href="categories.html">Categories</a>
-<a href="products.html">Products</a>
-<a href="contact.html">Contact</a>
+<a onclick="goHome()">Home</a>
+<a onclick="scrollToSection('category')">Categories</a>
+<a onclick="scrollToSection('products')">Products</a>
+<a onclick="scrollToSection('footer')">Contact</a>
 </div>
 
 <div class="nav-buttons">
-<a href="signin.html">
-<button>Sign In</button>
-</a>
-
-<a href="cart.html">
-<button>Cart</button>
-</a>
-
+<button onclick="alert('Sign In Feature Coming Soon')">Sign In</button>
+<button onclick="alert('Cart Feature Coming Soon')">Cart</button>
+</div>
 
 </div>
-</header>
+
 <div class="slider">
 
 <div class="slides">
 
 <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d">
+
 <img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
+
 <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
 
 </div>
@@ -290,49 +286,47 @@ width:55px;
 <div class="hero-text">
 <h1>Luxury Jewellery Collection</h1>
 <p>Elegant designs for every occasion</p>
-<a href="products.html">
-<button>Shop Now</button>
-</a>
+<button onclick="scrollToSection('products')">Shop Now</button>
 </div>
 
 </div>
 
-<div class="category">
+<div class="category" id="category">
 
 <h2>Shop by Category</h2>
 
 <div class="category-list">
 
-<a href="products.html" class="category-item">
+<div class="category-item" onclick="scrollToSection('products')">
 <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
 <p>Earrings</p>
-</a>
+</div>
 
-<a href="products.html" class="category-item">
+<div class="category-item" onclick="scrollToSection('products')">
 <img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
 <p>Pendants</p>
-</a>
+</div>
 
-<a href="products.html" class="category-item">
+<div class="category-item" onclick="scrollToSection('products')">
 <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
 <p>Necklace</p>
-</a>
+</div>
 
-<a href="products.html" class="category-item">
+<div class="category-item" onclick="scrollToSection('products')">
 <img src="https://images.unsplash.com/photo-1588444650733-d7d9e5b27f02">
 <p>Bracelets</p>
-</a>
+</div>
 
-<a href="products.html" class="category-item">
+<div class="category-item" onclick="scrollToSection('products')">
 <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
 <p>Combo Sets</p>
-</a>
-
 </div>
 
 </div>
 
-<div class="products">
+</div>
+
+<div class="products" id="products">
 
 <h2>Featured Products</h2>
 
@@ -371,7 +365,7 @@ width:55px;
 
 </div>
 
-<div class="footer">
+<div class="footer" id="footer">
 
 <div>
 <h3>Nitose</h3>
@@ -410,6 +404,19 @@ width:55px;
 
 function payNow(){
 window.location.href="https://paytm.me/YOURPAYTMLINK";
+}
+
+function scrollToSection(id){
+document.getElementById(id).scrollIntoView({
+behavior:"smooth"
+});
+}
+
+function goHome(){
+window.scrollTo({
+top:0,
+behavior:"smooth"
+});
 }
 
 </script>
