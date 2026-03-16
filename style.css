@@ -1,16 +1,16 @@
 body{
 margin:0;
 font-family:Arial, Helvetica, sans-serif;
-background:#f7f4f2;
+background:#f6f3f1;
 }
 
 /* top bar */
 
 .topbar{
-background:#6d4c41;
+background:#6b4a3d;
 color:white;
+font-size:13px;
 padding:6px;
-font-size:14px;
 text-align:center;
 }
 
@@ -20,45 +20,44 @@ text-align:center;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:15px;
+padding:15px 20px;
 background:white;
 box-shadow:0 2px 6px rgba(0,0,0,0.1);
 }
 
 .logo{
-color:#6d4c41;
+color:#6b4a3d;
 }
 
 .menu{
 display:flex;
-list-style:none;
 gap:20px;
+list-style:none;
 }
 
 .menu a{
 text-decoration:none;
 color:#333;
+font-size:14px;
 }
 
 .nav-btn{
-background:#6d4c41;
-color:white;
+background:#6b4a3d;
 border:none;
-padding:8px 14px;
+color:white;
+padding:7px 14px;
 border-radius:6px;
-cursor:pointer;
 }
 
-/* slider */
+/* hero section */
 
-.slider{
+.hero{
 position:relative;
-text-align:center;
 }
 
-.slider img{
+.hero img{
 width:100%;
-height:350px;
+height:320px;
 object-fit:cover;
 }
 
@@ -68,13 +67,14 @@ top:50%;
 left:50%;
 transform:translate(-50%,-50%);
 color:white;
+text-align:center;
 }
 
 .hero-btn{
-background:#6d4c41;
+background:#6b4a3d;
 border:none;
-padding:10px 18px;
 color:white;
+padding:10px 18px;
 border-radius:6px;
 }
 
@@ -88,19 +88,19 @@ text-align:center;
 .category-grid{
 display:flex;
 justify-content:center;
-gap:30px;
 flex-wrap:wrap;
+gap:25px;
+margin-top:20px;
 }
 
 .cat{
+width:80px;
 text-align:center;
-text-decoration:none;
-color:black;
 }
 
 .cat img{
-width:90px;
-height:90px;
+width:70px;
+height:70px;
 object-fit:cover;
 border-radius:50%;
 }
@@ -114,17 +114,18 @@ text-align:center;
 
 .product-grid{
 display:flex;
-gap:20px;
 justify-content:center;
+gap:20px;
 flex-wrap:wrap;
+margin-top:20px;
 }
 
 .product{
 background:white;
 padding:15px;
-border-radius:10px;
 width:220px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
 
 .product img{
@@ -133,44 +134,44 @@ border-radius:10px;
 }
 
 .product button{
-background:#6d4c41;
-color:white;
+background:#6b4a3d;
 border:none;
-padding:8px 12px;
+color:white;
+padding:8px 14px;
 border-radius:6px;
-cursor:pointer;
 }
 
 /* brand section */
 
 .brand{
-text-align:center;
+background:#efe7e3;
 padding:40px 20px;
-background:#f1eae7;
+text-align:center;
 }
 
 /* footer */
 
 footer{
-background:#6d4c41;
+background:#6b4a3d;
 color:white;
-padding:30px;
+padding:30px 20px;
 }
 
 .footer-grid{
 display:flex;
 justify-content:space-between;
 flex-wrap:wrap;
+gap:20px;
 }
 
-/* whatsapp button */
+/* whatsapp */
 
 .whatsapp{
 position:fixed;
-bottom:25px;
-right:20px;
+right:18px;
+bottom:18px;
 }
 
 .whatsapp img{
-width:80px;
+width:60px;
 }
