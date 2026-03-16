@@ -1,48 +1,60 @@
 body{
+
 margin:0;
 font-family:Arial;
 background:#f5f5f5;
+
 }
 
 .topbar{
+
 background:#7a5445;
 color:white;
-text-align:center;
 padding:6px;
 font-size:14px;
+
 }
 
 .navbar{
+
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 40px;
 background:white;
+
 }
 
 .logo{
+
 font-size:20px;
 font-weight:bold;
+
 }
 
 .menu a{
+
 margin:0 15px;
 text-decoration:none;
 color:black;
+
 }
 
 .nav-buttons button{
+
 margin-left:10px;
 padding:8px 14px;
 border:none;
 background:#7a5445;
 color:white;
-border-radius:5px;
+border-radius:6px;
+
 }
 
 .hero{
+
 height:350px;
-background:url(images/hero.jpg);
+background:url("https://images.unsplash.com/photo-1617038261541-7c7d8f1a4082");
 background-size:cover;
 background-position:center;
 display:flex;
@@ -50,96 +62,127 @@ align-items:center;
 justify-content:center;
 text-align:center;
 color:white;
+
 }
 
 .hero h1{
+
 font-size:34px;
+
 }
 
 .hero button{
+
 margin-top:10px;
 padding:10px 20px;
-border:none;
 background:#7a5445;
+border:none;
 color:white;
-border-radius:5px;
+border-radius:6px;
+
 }
 
 .categories{
+
 padding:40px;
 text-align:center;
+
 }
 
 .category-grid{
+
 display:flex;
 justify-content:center;
 gap:30px;
 margin-top:20px;
+
 }
 
 .cat img{
+
 width:80px;
 height:80px;
 border-radius:50%;
 object-fit:cover;
+
 }
 
 .products{
+
 padding:40px;
 text-align:center;
+
 }
 
 .product-grid{
+
 display:flex;
 justify-content:center;
 gap:30px;
 margin-top:20px;
+
 }
 
 .product{
+
 background:white;
 padding:20px;
 border-radius:10px;
 width:220px;
 box-shadow:0 2px 10px rgba(0,0,0,0.1);
+
 }
 
 .product img{
+
 width:100%;
 border-radius:8px;
+
 }
 
 .product button{
+
 margin-top:10px;
 padding:8px 15px;
 border:none;
 background:#7a5445;
 color:white;
 border-radius:5px;
+
 }
 
 .about{
+
 text-align:center;
 padding:40px;
 background:#f0ebe9;
+
 }
 
 .footer{
+
 background:#7a5445;
 color:white;
 padding:40px;
+
 }
 
 .footer-grid{
+
 display:flex;
 justify-content:space-between;
+
 }
 
-.payment{
-width:180px;
+.payments img{
+
+width:40px;
+margin-right:10px;
+
 }
 
 .whatsapp{
+
 position:fixed;
 right:20px;
 bottom:20px;
@@ -149,4 +192,5 @@ padding:12px;
 border-radius:50%;
 font-size:20px;
 text-decoration:none;
+
 }
