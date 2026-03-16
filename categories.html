@@ -1,110 +1,251 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Categories - Nitose</title>
+<title>Nitose | Categories</title>
 
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
 
-<link rel="stylesheet" href="style.css">
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f4efec;
+min-height:100vh;
+display:flex;
+flex-direction:column;
+}
+
+/* TOP BAR */
+
+.topbar{
+background:#6b4a46;
+color:white;
+padding:8px;
+overflow:hidden;
+white-space:nowrap;
+text-align:center;
+font-size:14px;
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:white;
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#6b4a46;
+text-decoration:none;
+}
+
+.nav-links a{
+margin:0 15px;
+text-decoration:none;
+color:#333;
+font-size:15px;
+}
+
+.nav-buttons button{
+margin-left:10px;
+padding:8px 15px;
+border:none;
+background:#6b4a46;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
+
+/* CATEGORY SECTION */
+
+.category{
+padding:50px 20px;
+text-align:center;
+flex:1;
+}
+
+.category h2{
+margin-bottom:30px;
+}
+
+.category-list{
+display:flex;
+justify-content:center;
+align-items:center;
+gap:40px;
+flex-wrap:wrap;
+max-width:900px;
+margin:auto;
+}
+
+.category-item{
+text-decoration:none;
+color:black;
+text-align:center;
+}
+
+.category-item img{
+width:95px;
+height:95px;
+border-radius:50%;
+object-fit:cover;
+}
+
+.category-item p{
+margin-top:8px;
+font-size:14px;
+}
+
+/* FOOTER */
+
+.footer{
+background:#6b4a46;
+color:white;
+padding:40px;
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+margin-top:auto;
+}
+
+.footer h3{
+margin-top:0;
+}
+
+.payment-icons{
+display:flex;
+gap:10px;
+align-items:center;
+margin-top:10px;
+}
+
+.payment-icons img{
+width:40px;
+}
+
+.payment-names{
+font-size:13px;
+margin-top:8px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+}
+
+.whatsapp img{
+width:55px;
+}
+
+</style>
 
 </head>
 
 <body>
 
 <div class="topbar">
-<marquee>
-✨ Explore Our Jewellery Categories | Premium Anti-Tarnish Collection ✨
-</marquee>
+✨ Explore Our Jewellery Categories | Premium Anti-Tarnish Collection
 </div>
 
-<nav class="navbar">
+<div class="navbar">
 
-<h2 class="logo">Nitose</h2>
+<a href="index.html" class="logo">Nitose</a>
 
-<ul class="menu">
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="categories.html">Categories</a>
+<a href="products.html">Products</a>
+<a href="contact.html">Contact</a>
+</div>
 
-<li><a href="index.html">Home</a></li>
-<li><a href="categories.html">Categories</a></li>
-<li><a href="products.html">Products</a></li>
-<li><a href="contact.html">Contact</a></li>
-
-</ul>
-
-<div class="nav-icons">
-
-<button class="nav-btn">Sign In</button>
-<button class="nav-btn">Cart</button>
+<div class="nav-buttons">
+<button>Sign In</button>
+<button>Cart</button>
+</div>
 
 </div>
 
-</nav>
-
-<section class="categories">
+<div class="category">
 
 <h2>All Categories</h2>
 
-<div class="category-grid">
+<div class="category-list">
 
-<div class="cat">
-<img src="https://images.pexels.com/photos/1191531/pexels-photo-1191531.jpeg">
+<a href="products.html" class="category-item">
+<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
 <p>Earrings</p>
-</div>
+</a>
 
-<div class="cat">
-<img src="https://images.pexels.com/photos/1191535/pexels-photo-1191535.jpeg">
+<a href="products.html" class="category-item">
+<img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
 <p>Pendants</p>
-</div>
+</a>
 
-<div class="cat">
-<img src="https://images.pexels.com/photos/265906/pexels-photo-265906.jpeg">
+<a href="products.html" class="category-item">
+<img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
 <p>Necklace</p>
-</div>
+</a>
 
-<div class="cat">
-<img src="https://images.pexels.com/photos/1454188/pexels-photo-1454188.jpeg">
+<a href="products.html" class="category-item">
+<img src="https://images.unsplash.com/photo-1588444650733-d7d9e5b27f02">
 <p>Bracelets</p>
-</div>
+</a>
 
-<div class="cat">
-<img src="https://images.pexels.com/photos/1615997/pexels-photo-1615997.jpeg">
+<a href="products.html" class="category-item">
+<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
 <p>Combo Sets</p>
-</div>
+</a>
 
 </div>
 
-</section>
+</div>
 
-<footer>
-
-<div class="footer-grid">
+<div class="footer">
 
 <div>
-
 <h3>Nitose</h3>
 <p>Premium Jewellery Brand</p>
 <p>Delhi, India</p>
-
 </div>
 
 <div>
-
-<h4>Contact</h4>
-
+<h3>Contact</h3>
 <p>Phone: 9625979565</p>
 <p>Email: nitose.official@gmail.com</p>
+<p>Instagram: nitose_official</p>
+</div>
 
+<div>
+<h3>We Accept</h3>
+
+<div class="payment-icons">
+<img src="https://img.icons8.com/color/48/visa.png">
+<img src="https://img.icons8.com/color/48/mastercard.png">
+<img src="https://img.icons8.com/color/48/google-pay.png">
+<img src="https://img.icons8.com/color/48/bhim.png">
+</div>
+
+<div class="payment-names">
+Visa • Mastercard • Google Pay • UPI
 </div>
 
 </div>
 
-</footer>
+</div>
 
 <a href="https://wa.me/919625979565" class="whatsapp">
-<img src="https://img.icons8.com/color/60/whatsapp.png">
+<img src="https://img.icons8.com/color/96/whatsapp.png">
 </a>
 
 </body>
-
 </html>
