@@ -1,85 +1,273 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Nitose Jewellery</title>
 
-<link rel="stylesheet" href="style.css">
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+background:#f5f5f5;
+}
+
+/* TOP BAR */
+
+.topbar{
+background:#7b5342;
+color:white;
+padding:8px;
+font-size:14px;
+overflow:hidden;
+white-space:nowrap;
+}
+
+.topbar span{
+display:inline-block;
+padding-left:100%;
+animation:move 15s linear infinite;
+}
+
+@keyframes move{
+0%{transform:translateX(0)}
+100%{transform:translateX(-100%)}
+}
+
+/* NAVBAR */
+
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background:white;
+padding:15px 40px;
+box-shadow:0 2px 10px rgba(0,0,0,0.1);
+}
+
+.logo{
+font-size:22px;
+font-weight:bold;
+}
+
+.menu a{
+margin:0 15px;
+text-decoration:none;
+color:black;
+}
+
+.navbtn button{
+margin-left:10px;
+padding:8px 15px;
+border:none;
+background:#7b5342;
+color:white;
+border-radius:4px;
+}
+
+/* HERO */
+
+.hero{
+height:500px;
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+color:white;
+transition:1s;
+}
+
+.hero h1{
+font-size:40px;
+}
+
+.hero button{
+margin-top:20px;
+padding:12px 25px;
+border:none;
+background:#7b5342;
+color:white;
+border-radius:5px;
+}
+
+/* CATEGORY */
+
+.category{
+padding:50px 20px;
+text-align:center;
+}
+
+.category-row{
+display:flex;
+justify-content:center;
+gap:40px;
+margin-top:30px;
+flex-wrap:wrap;
+}
+
+.cat{
+text-align:center;
+}
+
+.cat img{
+width:90px;
+height:90px;
+border-radius:50%;
+object-fit:cover;
+}
+
+/* PRODUCTS */
+
+.products{
+padding:40px;
+text-align:center;
+}
+
+.product-row{
+display:flex;
+gap:25px;
+justify-content:center;
+flex-wrap:wrap;
+margin-top:30px;
+}
+
+.card{
+background:white;
+padding:20px;
+border-radius:10px;
+width:230px;
+box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card img{
+width:100%;
+border-radius:10px;
+}
+
+.card button{
+margin-top:10px;
+background:#7b5342;
+border:none;
+padding:8px 15px;
+color:white;
+border-radius:4px;
+}
+
+/* INFO */
+
+.info{
+background:#eae4e1;
+padding:50px;
+text-align:center;
+}
+
+/* FOOTER */
+
+.footer{
+background:#7b5342;
+color:white;
+display:flex;
+justify-content:space-around;
+padding:40px;
+flex-wrap:wrap;
+}
+
+.footer div{
+margin:10px;
+}
+
+.pay img{
+width:50px;
+margin-right:8px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+padding:12px 15px;
+border-radius:50%;
+font-size:20px;
+text-decoration:none;
+}
+
+</style>
 
 </head>
 
 <body>
 
-<!-- TOP RUNNING BAR -->
+<!-- TOP BAR -->
 
 <div class="topbar">
-<marquee>✨ Welcome to Nitose Jewellery • Premium Anti Tarnish Jewellery • Shop Now ✨</marquee>
+<span>✨ Welcome to Nitose Jewellery – Premium Anti Tarnish Jewellery – Shop Now ✨</span>
 </div>
 
 <!-- NAVBAR -->
 
-<header class="navbar">
+<div class="navbar">
 
 <div class="logo">Nitose</div>
 
-<nav class="menu">
+<div class="menu">
 <a href="#">Home</a>
 <a href="#">Categories</a>
 <a href="#">Products</a>
 <a href="#">Contact</a>
-</nav>
-
-<div class="nav-buttons">
-<button class="sign">Sign In</button>
-<button class="cart">Cart</button>
 </div>
 
-</header>
+<div class="navbtn">
+<button>Sign In</button>
+<button>Cart</button>
+</div>
 
-<!-- HERO SECTION -->
+</div>
 
-<section class="hero">
+<!-- HERO -->
 
-<div class="hero-text">
+<div class="hero" id="hero">
 
+<div>
 <h1>Luxury Jewellery Collection</h1>
-
 <p>Elegant designs for every occasion</p>
-
 <button>Shop Now</button>
-
 </div>
 
-</section>
+</div>
 
 <!-- CATEGORY -->
 
-<section class="categories">
+<div class="category">
 
 <h2>Shop by Category</h2>
 
-<div class="category-grid">
+<div class="category-row">
 
 <div class="cat">
-<img src="https://images.unsplash.com/photo-1611599539392-0198e0d8f9f1">
+<img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d">
 <p>Earrings</p>
 </div>
 
 <div class="cat">
-<img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
+<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
 <p>Pendants</p>
 </div>
 
 <div class="cat">
-<img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
+<img src="https://images.unsplash.com/photo-1602752250015-52934bc45613">
 <p>Necklace</p>
 </div>
 
 <div class="cat">
-<img src="https://images.unsplash.com/photo-1617038260897-41a1f14a4f2c">
+<img src="https://images.unsplash.com/photo-1617038260897-41a1f14a2f84">
 <p>Bracelets</p>
 </div>
 
@@ -90,122 +278,120 @@
 
 </div>
 
-</section>
+</div>
 
 <!-- PRODUCTS -->
 
-<section class="products">
+<div class="products">
 
 <h2>Featured Products</h2>
 
-<div class="product-grid">
+<div class="product-row">
 
-<div class="product">
-
-<img src="https://images.unsplash.com/photo-1617038261541-7c7d8f1a4082">
-
-<h3>Gold Drop Earrings</h3>
-
+<div class="card">
+<img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d">
+<h4>Gold Drop Earrings</h4>
 <p>₹199</p>
-
 <button>Pay Now</button>
-
 </div>
 
-<div class="product">
-
-<img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
-
-<h3>Diamond Pendant</h3>
-
+<div class="card">
+<img src="https://images.unsplash.com/photo-1602752250015-52934bc45613">
+<h4>Diamond Pendant</h4>
 <p>₹299</p>
-
 <button>Pay Now</button>
-
 </div>
 
-<div class="product">
-
-<img src="https://images.unsplash.com/photo-1603561591411-07134e71a2a9">
-
-<h3>Luxury Necklace</h3>
-
+<div class="card">
+<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
+<h4>Luxury Necklace</h4>
 <p>₹499</p>
-
 <button>Pay Now</button>
-
 </div>
 
 </div>
 
-</section>
+</div>
 
-<!-- ABOUT -->
+<!-- INFO -->
 
-<section class="about">
+<div class="info">
 
 <h2>Crafting Everyday Luxury</h2>
 
 <p>
-Nitose jewellery brings premium anti tarnish designs for modern women.
-Elegant jewellery crafted for everyday style.
+Nitose jewellery is designed to bring elegance to your everyday style.
+Premium anti-tarnish jewellery for modern women.
 </p>
 
-</section>
+</div>
 
 <!-- FOOTER -->
 
-<footer class="footer">
-
-<div class="footer-grid">
+<div class="footer">
 
 <div>
-
 <h3>Nitose</h3>
-
 <p>Premium Jewellery Brand</p>
-
 <p>Delhi, India</p>
-
 </div>
 
 <div>
-
 <h3>Contact</h3>
-
 <p>Phone: 9625979565</p>
-
 <p>Email: nitose.official@gmail.com</p>
-
 <p>Instagram: nitose_official</p>
-
 </div>
 
-<div>
-
+<div class="pay">
 <h3>We Accept</h3>
-
-<div class="payments">
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/5/5e/Visa_Inc._logo.svg">
 
 <img src="https://upload.wikimedia.org/wikipedia/commons/2/2a/Mastercard-logo.svg">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Google_Pay_Logo.svg">
+<img src="https://upload.wikimedia.org/wikipedia/commons/0/04/Google_Pay_logo.svg">
 
-<img src="https://upload.wikimedia.org/wikipedia/commons/4/42/Paytm_logo.png">
-
-</div>
+<img src="https://upload.wikimedia.org/wikipedia/commons/7/71/UPI-Logo-vector.svg">
 
 </div>
 
 </div>
 
-</footer>
+<!-- WHATSAPP -->
 
-<!-- WHATSAPP BUTTON -->
+<a class="whatsapp" href="https://wa.me/919625979565">W</a>
 
-<a href="#" class="whatsapp">💬</a>
+<!-- HERO SLIDER -->
+
+<script>
+
+let images=[
+"https://images.unsplash.com/photo-1602752250015-52934bc45613",
+"https://images.unsplash.com/photo-1617038220319-276d3cfab638",
+"https://images.unsplash.com/photo-1611652022419-a9419f74343d",
+"https://images.unsplash.com/photo-1588444837495-c6cfeb53f32d"
+]
+
+let i=0
+
+function slide(){
+
+document.getElementById("hero").style.backgroundImage="url("+images[i]+")"
+
+i++
+
+if(i==images.length){
+i=0
+}
+
+}
+
+setInterval(slide,3000)
+
+slide()
+
+</script>
 
 </body>
 </html>
