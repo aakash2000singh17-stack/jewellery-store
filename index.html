@@ -43,6 +43,7 @@ justify-content:space-between;
 align-items:center;
 padding:15px 40px;
 background:white;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
 }
 
 .logo{
@@ -57,6 +58,11 @@ margin:0 15px;
 text-decoration:none;
 color:#333;
 cursor:pointer;
+transition:0.3s;
+}
+
+.nav-links a:hover{
+color:#6b4a46;
 }
 
 .nav-buttons button{
@@ -67,6 +73,12 @@ background:#6b4a46;
 color:white;
 border-radius:5px;
 cursor:pointer;
+transition:0.3s;
+}
+
+.nav-buttons button:hover{
+background:#4e332f;
+transform:scale(1.05);
 }
 
 /* IMAGE SLIDER */
@@ -131,6 +143,12 @@ border:none;
 color:white;
 border-radius:5px;
 cursor:pointer;
+transition:0.3s;
+}
+
+.hero-text button:hover{
+background:#4e332f;
+transform:scale(1.05);
 }
 
 /* CATEGORY */
@@ -151,6 +169,7 @@ flex-wrap:wrap;
 cursor:pointer;
 text-decoration:none;
 color:black;
+transition:0.3s;
 }
 
 .category-item img{
@@ -160,8 +179,8 @@ border-radius:50%;
 object-fit:cover;
 }
 
-.category-item p{
-margin-top:8px;
+.category-item:hover{
+transform:scale(1.1);
 }
 
 /* PRODUCTS */
@@ -184,6 +203,11 @@ padding:20px;
 border-radius:10px;
 width:220px;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:0.3s;
+}
+
+.product:hover{
+transform:translateY(-6px);
 }
 
 .product img{
@@ -201,6 +225,11 @@ border:none;
 padding:8px 15px;
 border-radius:4px;
 cursor:pointer;
+transition:0.3s;
+}
+
+.product button:hover{
+background:#4e332f;
 }
 
 /* CRAFTING */
@@ -238,8 +267,20 @@ right:20px;
 width:55px;
 }
 
-</style>
+/* SCROLL ANIMATION */
 
+.fade{
+opacity:0;
+transform:translateY(20px);
+transition:1s;
+}
+
+.fade.show{
+opacity:1;
+transform:translateY(0);
+}
+
+</style>
 </head>
 
 <body>
@@ -260,26 +301,21 @@ width:55px;
 </div>
 
 <div class="nav-buttons">
-<button onclick="alert('Sign In Feature Coming Soon')">Sign In</button>
-<button onclick="alert('Cart Feature Coming Soon')">Cart</button>
+<button onclick="goToSignIn()">Sign In</button>
+<button onclick="openCart()">Cart</button>
 </div>
 
 </div>
 
 <div class="slider">
-
 <div class="slides">
-
 <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d">
 <img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
 <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
-
 </div>
-
 </div>
 
 <div class="hero">
-
 <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
 
 <div class="hero-text">
@@ -289,45 +325,38 @@ width:55px;
 <button>Shop Now</button>
 </a>
 </div>
-
 </div>
 
-<div class="category">
+<div class="category fade">
 
 <h2>Shop by Category</h2>
 
 <div class="category-list">
 
-<a href="products.html" class="category-item">
+<a href="earrings.html" class="category-item">
 <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
 <p>Earrings</p>
 </a>
 
-<a href="products.html" class="category-item">
+<a href="pendants.html" class="category-item">
 <img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
 <p>Pendants</p>
 </a>
 
-<a href="products.html" class="category-item">
+<a href="necklace.html" class="category-item">
 <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
 <p>Necklace</p>
 </a>
 
-<a href="products.html" class="category-item">
+<a href="bracelets.html" class="category-item">
 <img src="https://images.unsplash.com/photo-1588444650733-d7d9e5b27f02">
 <p>Bracelets</p>
 </a>
 
-<a href="products.html" class="category-item">
-<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
-<p>Combo Sets</p>
-</a>
-
+</div>
 </div>
 
-</div>
-
-<div class="products">
+<div class="products fade">
 
 <h2>Featured Products</h2>
 
@@ -337,33 +366,29 @@ width:55px;
 <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
 <h4>Gold Drop Earrings</h4>
 <p>₹199</p>
-<button onclick="payNow()">Pay Now</button>
+<button onclick="payNow(199)">Pay Now</button>
 </div>
 
 <div class="product">
 <img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
 <h4>Diamond Pendant</h4>
 <p>₹299</p>
-<button onclick="payNow()">Pay Now</button>
+<button onclick="payNow(299)">Pay Now</button>
 </div>
 
 <div class="product">
 <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
 <h4>Luxury Necklace</h4>
 <p>₹499</p>
-<button onclick="payNow()">Pay Now</button>
+<button onclick="payNow(499)">Pay Now</button>
 </div>
 
 </div>
-
 </div>
 
-<div class="crafting">
-
+<div class="crafting fade">
 <h2>Crafting Everyday Luxury</h2>
-
-<p>Nitose jewellery is designed to bring elegance to your everyday style. Premium anti-tarnish jewellery for modern women.</p>
-
+<p>Nitose jewellery is designed to bring elegance to your everyday style.</p>
 </div>
 
 <div class="footer">
@@ -378,19 +403,22 @@ width:55px;
 <h3>Contact</h3>
 <p>Phone: 9625979565</p>
 <p>Email: nitose.official@gmail.com</p>
-<p>Instagram: nitose_official</p>
+<p>
+Instagram: 
+<a href="https://www.instagram.com/nitose.official" target="_blank" style="color:white;">
+@nitose.official
+</a>
+</p>
 </div>
 
 <div>
 <h3>We Accept</h3>
 
 <div class="payment-icons">
-
 <img src="https://img.icons8.com/color/48/visa.png">
 <img src="https://img.icons8.com/color/48/mastercard.png">
 <img src="https://img.icons8.com/color/48/google-pay.png">
 <img src="https://img.icons8.com/color/48/bhim.png">
-
 </div>
 
 </div>
@@ -403,9 +431,33 @@ width:55px;
 
 <script>
 
-function payNow(){
+// PAYMENT
+function payNow(amount){
+alert("Redirecting to payment ₹" + amount);
 window.location.href="https://paytm.me/YOURPAYTMLINK";
 }
+
+// SIGNIN
+function goToSignIn(){
+window.location.href="signin.html";
+}
+
+// CART
+function openCart(){
+alert("Cart coming soon");
+}
+
+// SCROLL ANIMATION
+const fades = document.querySelectorAll(".fade");
+
+window.addEventListener("scroll", () => {
+fades.forEach(el => {
+const top = el.getBoundingClientRect().top;
+if(top < window.innerHeight - 50){
+el.classList.add("show");
+}
+});
+});
 
 </script>
 
