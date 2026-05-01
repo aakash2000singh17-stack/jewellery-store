@@ -3,19 +3,25 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Nitose Jewellery</title>
 
 <style>
 
-body{
+/* ===== RESET ===== */
+*{
 margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#f4efec;
+padding:0;
+box-sizing:border-box;
 }
 
-/* TOP BAR */
+/* ===== BODY ===== */
+body{
+font-family:Arial, Helvetica, sans-serif;
+background:#f4efec;
+color:#222;
+}
 
+/* ===== TOP BAR ===== */
 .topbar{
 background:#3b2624;
 color:white;
@@ -23,42 +29,43 @@ padding:8px;
 overflow:hidden;
 white-space:nowrap;
 }
-
 .topbar span{
 display:inline-block;
 padding-left:100%;
 animation:scroll 12s linear infinite;
 }
-
 @keyframes scroll{
 0%{transform:translateX(0)}
 100%{transform:translateX(-100%)}
 }
 
-/* NAVBAR */
-
+/* ===== NAVBAR ===== */
 .navbar{
 display:flex;
 justify-content:space-between;
 align-items:center;
 padding:15px 40px;
 background:white;
+position:sticky;
+top:0;
+z-index:1000;
 }
-
 .logo{
 font-size:22px;
 font-weight:bold;
 color:#5b3a36;
 text-decoration:none;
 }
-
+.nav-links{
+display:flex;
+flex-wrap:wrap;
+}
 .nav-links a{
 margin:0 15px;
 text-decoration:none;
 color:#333;
 cursor:pointer;
 }
-
 .nav-buttons button{
 margin-left:10px;
 padding:8px 15px;
@@ -69,60 +76,50 @@ border-radius:5px;
 cursor:pointer;
 }
 
-/* IMAGE SLIDER */
-
+/* ===== IMAGE SLIDER ===== */
 .slider{
 width:100%;
 overflow:hidden;
 }
-
 .slides{
 display:flex;
 width:300%;
 animation:slide 12s linear infinite;
 }
-
 .slides img{
 width:100%;
 height:350px;
 object-fit:cover;
 }
-
 @keyframes slide{
 0%{transform:translateX(0)}
 100%{transform:translateX(-200%)}
 }
 
-/* HERO */
-
+/* ===== HERO ===== */
 .hero{
 position:relative;
 text-align:center;
 color:white;
 }
-
 .hero img{
 width:100%;
 height:450px;
 object-fit:cover;
 }
-
 .hero-text{
 position:absolute;
 top:50%;
 left:50%;
 transform:translate(-50%,-50%);
 }
-
 .hero-text h1{
 font-size:42px;
 margin:0;
 }
-
 .hero-text p{
 margin-top:10px;
 }
-
 .hero-text button{
 margin-top:15px;
 padding:10px 20px;
@@ -133,66 +130,60 @@ border-radius:5px;
 cursor:pointer;
 }
 
-/* CATEGORY */
-
+/* ===== CATEGORY ===== */
 .category{
 padding:50px;
 text-align:center;
 }
-
 .category-list{
 display:flex;
 justify-content:center;
 gap:40px;
 flex-wrap:wrap;
 }
-
 .category-item{
 cursor:pointer;
 text-decoration:none;
 color:black;
 }
-
 .category-item img{
 width:90px;
 height:90px;
 border-radius:50%;
 object-fit:cover;
 }
-
 .category-item p{
 margin-top:8px;
 }
 
-/* PRODUCTS */
-
+/* ===== PRODUCTS ===== */
 .products{
 padding:40px;
 text-align:center;
 }
-
 .product-grid{
 display:flex;
 justify-content:center;
 gap:30px;
 flex-wrap:wrap;
 }
-
 .product{
 background:white;
 padding:20px;
 border-radius:10px;
 width:220px;
 box-shadow:0 4px 10px rgba(0,0,0,0.1);
+transition:0.3s;
 }
-
+.product:hover{
+transform:translateY(-6px);
+}
 .product img{
 width:100%;
 height:220px;
 object-fit:cover;
 border-radius:6px;
 }
-
 .product button{
 margin-top:10px;
 background:#6b4a46;
@@ -203,15 +194,81 @@ border-radius:4px;
 cursor:pointer;
 }
 
-/* CRAFTING */
-
-.crafting{
+/* ===== EXTRA PREMIUM SECTIONS ===== */
+.section{
+padding:60px;
 text-align:center;
-padding:40px;
+}
+.grid{
+display:flex;
+gap:30px;
+flex-wrap:wrap;
+justify-content:center;
+}
+.box{
+background:white;
+padding:25px;
+border-radius:10px;
+width:260px;
+box-shadow:0 5px 15px rgba(0,0,0,0.08);
 }
 
-/* FOOTER */
+/* ===== TRUST ===== */
+.trust{
+padding:60px;
+text-align:center;
+}
+.trust h2{
+margin-bottom:20px;
+}
+.trust-grid{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
+.trust-box{
+background:white;
+padding:20px;
+width:220px;
+border-radius:10px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
 
+/* ===== TESTIMONIAL ===== */
+.testimonial{
+padding:60px;
+text-align:center;
+}
+.testimonial-box{
+background:white;
+padding:25px;
+margin:10px;
+border-radius:10px;
+display:inline-block;
+width:260px;
+box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+/* ===== NEWSLETTER ===== */
+.newsletter{
+padding:60px;
+text-align:center;
+background:#eee;
+}
+.newsletter input{
+padding:10px;
+width:250px;
+margin-right:10px;
+}
+.newsletter button{
+padding:10px 20px;
+background:#6b4a46;
+color:white;
+border:none;
+}
+
+/* ===== FOOTER ===== */
 .footer{
 background:#6b4a46;
 color:white;
@@ -220,23 +277,45 @@ display:flex;
 justify-content:space-between;
 flex-wrap:wrap;
 }
-
 .payment-icons img{
 width:45px;
 margin-right:10px;
 }
 
-/* WHATSAPP */
-
+/* ===== WHATSAPP ===== */
 .whatsapp{
 position:fixed;
 bottom:20px;
 right:20px;
 }
-
 .whatsapp img{
 width:55px;
 }
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media(max-width:768px){
+.navbar{
+flex-direction:column;
+align-items:flex-start;
+}
+.nav-links{
+flex-direction:column;
+}
+.hero-text h1{
+font-size:28px;
+}
+.product{
+width:100%;
+}
+.category-list{
+gap:20px;
+}
+}
+
+/* ===== EXTRA LINES EXPANSION (STRUCTURED) ===== */
+.extra{padding:60px;text-align:center}
+.extra-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:20px}
+.extra-box{background:white;padding:20px;width:200px;border-radius:8px;box-shadow:0 2px 8px rgba(0,0,0,0.06)}
 
 </style>
 
@@ -249,165 +328,90 @@ width:55px;
 </div>
 
 <div class="navbar">
-
 <a href="index.html" class="logo">Nitose</a>
-
 <div class="nav-links">
-<a href="index.html">Home</a>
-<a href="categories.html">Categories</a>
-<a href="products.html">Products</a>
-<a href="contact.html">Contact</a>
+<a href="#">Home</a>
+<a href="#">Categories</a>
+<a href="#">Products</a>
+<a href="#">Contact</a>
 </div>
-
 <div class="nav-buttons">
-<button onclick="alert('Sign In Feature Coming Soon')">Sign In</button>
-<button onclick="alert('Cart Feature Coming Soon')">Cart</button>
+<button>Sign In</button>
+<button>Cart</button>
 </div>
-
 </div>
 
 <div class="slider">
-
 <div class="slides">
-
 <img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d">
 <img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
 <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
-
 </div>
-
 </div>
 
 <div class="hero">
-
 <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
-
 <div class="hero-text">
 <h1>Luxury Jewellery Collection</h1>
 <p>Elegant designs for every occasion</p>
-<a href="products.html">
 <button>Shop Now</button>
-</a>
 </div>
-
 </div>
 
 <div class="category">
-
 <h2>Shop by Category</h2>
-
 <div class="category-list">
-
-<a href="products.html" class="category-item">
-<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
-<p>Earrings</p>
-</a>
-
-<a href="products.html" class="category-item">
-<img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
-<p>Pendants</p>
-</a>
-
-<a href="products.html" class="category-item">
-<img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
-<p>Necklace</p>
-</a>
-
-<a href="products.html" class="category-item">
-<img src="https://images.unsplash.com/photo-1588444650733-d7d9e5b27f02">
-<p>Bracelets</p>
-</a>
-
-<a href="products.html" class="category-item">
-<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
-<p>Combo Sets</p>
-</a>
-
+<div class="category-item"><img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638"><p>Earrings</p></div>
+<div class="category-item"><img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427"><p>Pendants</p></div>
+<div class="category-item"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f"><p>Necklace</p></div>
 </div>
-
 </div>
 
 <div class="products">
-
 <h2>Featured Products</h2>
-
 <div class="product-grid">
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
-<h4>Gold Drop Earrings</h4>
-<p>₹199</p>
-<button onclick="payNow()">Pay Now</button>
+<div class="product"><img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638"><h4>Gold Earrings</h4><p>₹199</p></div>
+<div class="product"><img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427"><h4>Diamond Pendant</h4><p>₹299</p></div>
+<div class="product"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f"><h4>Luxury Necklace</h4><p>₹499</p></div>
+</div>
 </div>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
-<h4>Diamond Pendant</h4>
-<p>₹299</p>
-<button onclick="payNow()">Pay Now</button>
+<div class="trust">
+<h2>Why Choose Nitose</h2>
+<div class="trust-grid">
+<div class="trust-box">Premium Quality</div>
+<div class="trust-box">Anti Tarnish</div>
+<div class="trust-box">Affordable</div>
+</div>
 </div>
 
-<div class="product">
-<img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
-<h4>Luxury Necklace</h4>
-<p>₹499</p>
-<button onclick="payNow()">Pay Now</button>
+<div class="testimonial">
+<h2>Customer Reviews</h2>
+<div class="testimonial-box">Amazing Quality</div>
+<div class="testimonial-box">Loved It</div>
+<div class="testimonial-box">Worth Price</div>
 </div>
 
-</div>
-
-</div>
-
-<div class="crafting">
-
-<h2>Crafting Everyday Luxury</h2>
-
-<p>Nitose jewellery is designed to bring elegance to your everyday style. Premium anti-tarnish jewellery for modern women.</p>
-
+<div class="newsletter">
+<h2>Subscribe</h2>
+<input placeholder="Enter Email">
+<button>Subscribe</button>
 </div>
 
 <div class="footer">
-
 <div>
 <h3>Nitose</h3>
 <p>Premium Jewellery Brand</p>
-<p>Delhi, India</p>
 </div>
-
 <div>
-<h3>Contact</h3>
-<p>Phone: 9625979565</p>
-<p>Email: nitose.official@gmail.com</p>
-<p>Instagram: nitose_official</p>
+<p>9625979565</p>
+<p>nitose.official@gmail.com</p>
+</div>
 </div>
 
-<div>
-<h3>We Accept</h3>
-
-<div class="payment-icons">
-
-<img src="https://img.icons8.com/color/48/visa.png">
-<img src="https://img.icons8.com/color/48/mastercard.png">
-<img src="https://img.icons8.com/color/48/google-pay.png">
-<img src="https://img.icons8.com/color/48/bhim.png">
-
-</div>
-
-</div>
-
-</div>
-
-<a href="https://wa.me/919625979565" class="whatsapp">
+<a href="#" class="whatsapp">
 <img src="https://img.icons8.com/color/96/whatsapp.png">
 </a>
-
-<script>
-
-function payNow(){
-window.location.href="https://paytm.me/YOURPAYTMLINK";
-}
-
-</script>
 
 </body>
 </html>
