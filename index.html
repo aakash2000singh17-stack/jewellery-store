@@ -6,22 +6,25 @@
 
 <title>Nitose Jewellery</title>
 
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
 <style>
 
 body{
 margin:0;
-font-family: 'Georgia', serif;
-background:#f5f1ed;
-color:#2c2c2c;
+font-family:'Poppins', sans-serif;
+background:#f6f1eb;
+color:#222;
 }
 
 /* TOPBAR */
 .topbar{
-background:#5a2d2d;
+background:#4a2c2a;
 color:#fff;
+text-align:center;
 padding:8px;
 font-size:13px;
-text-align:center;
+letter-spacing:0.5px;
 }
 
 /* NAVBAR */
@@ -29,93 +32,157 @@ text-align:center;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:12px 15px;
-background:#f5f1ed;
+padding:15px 20px;
+background:#f6f1eb;
 }
 
 .logo{
-font-weight:bold;
-font-size:20px;
+font-family:'Playfair Display', serif;
+font-size:22px;
+font-weight:600;
 }
 
-.nav-right{
+.nav-icons{
 display:flex;
-gap:15px;
+gap:18px;
+font-size:18px;
+cursor:pointer;
 }
 
 /* HERO */
+.hero{
+position:relative;
+margin:15px;
+border-radius:15px;
+overflow:hidden;
+}
+
 .hero img{
 width:100%;
-height:280px;
+height:320px;
 object-fit:cover;
-border-radius:10px;
+}
+
+.hero::after{
+content:'';
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(to top, rgba(0,0,0,0.5), transparent);
+}
+
+.hero-text{
+position:absolute;
+bottom:20px;
+left:20px;
+color:white;
+z-index:2;
+}
+
+.hero-text h1{
+font-family:'Playfair Display', serif;
+font-size:28px;
+margin:0;
+}
+
+.hero-text button{
+margin-top:10px;
+padding:10px 18px;
+background:#d68b4e;
+border:none;
+color:white;
+border-radius:6px;
+cursor:pointer;
 }
 
 /* SECTION */
 .section{
-padding:20px 15px;
+padding:25px 18px;
 }
 
-.section-title{
+.section-header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
+
+.section-header h2{
+font-family:'Playfair Display', serif;
 font-size:26px;
-margin-bottom:5px;
+margin:0;
 }
 
 .section-sub{
 font-size:14px;
-color:#555;
-margin-bottom:15px;
+color:#666;
+margin-top:5px;
 }
 
 /* PRODUCT ROW */
 .product-row{
 display:flex;
+gap:18px;
 overflow-x:auto;
-gap:15px;
+padding-top:15px;
 }
 
 .product{
-min-width:220px;
-background:#efe7df;
+min-width:240px;
+background:#fff;
 border-radius:15px;
 overflow:hidden;
-position:relative;
+box-shadow:0 6px 20px rgba(0,0,0,0.08);
+transition:0.3s;
+}
+
+.product:hover{
+transform:translateY(-5px);
 }
 
 .product img{
 width:100%;
-height:200px;
+height:230px;
 object-fit:cover;
 }
 
 .badge{
 position:absolute;
-top:10px;
-left:10px;
 background:#e08a3a;
 color:white;
-padding:4px 8px;
 font-size:12px;
-border-radius:8px;
+padding:5px 10px;
+border-radius:10px;
+top:10px;
+left:10px;
+}
+
+.product-box{
+position:relative;
 }
 
 .product-info{
-padding:10px;
+padding:12px;
+}
+
+.product-info p{
+margin:5px 0;
 }
 
 .price{
-font-weight:bold;
+font-weight:600;
 }
 
 .old{
 text-decoration:line-through;
+color:#888;
 font-size:13px;
-color:#777;
 margin-left:5px;
 }
 
 .off{
-color:green;
+color:#2e7d32;
 font-size:13px;
 margin-left:5px;
 }
@@ -123,28 +190,39 @@ margin-left:5px;
 /* CATEGORY */
 .category-row{
 display:flex;
-overflow-x:auto;
 gap:15px;
+overflow-x:auto;
+padding-top:15px;
 }
 
 .category{
-min-width:120px;
-text-align:center;
+min-width:140px;
 }
 
 .category img{
 width:100%;
-height:100px;
+height:120px;
 object-fit:cover;
-border-radius:10px;
+border-radius:12px;
+box-shadow:0 4px 12px rgba(0,0,0,0.1);
+}
+
+.category p{
+text-align:center;
+margin-top:8px;
+font-size:14px;
 }
 
 /* FOOTER */
 .footer{
-background:#5a2d2d;
+background:#4a2c2a;
 color:white;
-padding:20px;
-font-size:14px;
+padding:30px 20px;
+margin-top:30px;
+}
+
+.footer h3{
+font-family:'Playfair Display', serif;
 }
 
 /* WHATSAPP */
@@ -155,7 +233,7 @@ right:15px;
 }
 
 .whatsapp img{
-width:50px;
+width:55px;
 }
 
 </style>
@@ -164,41 +242,45 @@ width:50px;
 <body>
 
 <div class="topbar">
-Welcome to Nitose — Where elegance meets style
+Premium Anti-Tarnish Jewellery | Free Shipping Available
 </div>
 
 <div class="navbar">
 <div>☰</div>
 <div class="logo">Nitose</div>
-<div class="nav-right">
+<div class="nav-icons">
 <span onclick="goPage('products.html')">🔍</span>
-<span onclick="goPage('login.html')">Sign In</span>
+<span onclick="goPage('login.html')">👤</span>
 </div>
 </div>
 
 <!-- HERO -->
-<div class="section">
 <div class="hero">
 <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
+<div class="hero-text">
+<h1>Shine Every Day</h1>
+<button onclick="goPage('products.html')">Shop Now</button>
 </div>
 </div>
 
 <!-- FEATURED -->
 <div class="section">
 
-<div style="display:flex; justify-content:space-between;">
+<div class="section-header">
 <div>
-<div class="section-title">Featured Products</div>
-<div class="section-sub">“Where elegance meets everyday style.”</div>
+<h2>Featured Products</h2>
+<div class="section-sub">Where elegance meets everyday style.</div>
 </div>
-<div onclick="goPage('products.html')" style="cursor:pointer;">View All</div>
+<span onclick="goPage('products.html')" style="cursor:pointer;">View All</span>
 </div>
 
 <div class="product-row">
 
 <div class="product">
+<div class="product-box">
 <span class="badge">Bestseller</span>
 <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
+</div>
 <div class="product-info">
 <p>Croissant Hoops</p>
 <p class="price">₹149 <span class="old">₹299</span> <span class="off">50% Off</span></p>
@@ -206,8 +288,10 @@ Welcome to Nitose — Where elegance meets style
 </div>
 
 <div class="product">
+<div class="product-box">
 <span class="badge">Bestseller</span>
 <img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
+</div>
 <div class="product-info">
 <p>Emerald Ring</p>
 <p class="price">₹199 <span class="old">₹399</span> <span class="off">50% Off</span></p>
@@ -219,9 +303,8 @@ Welcome to Nitose — Where elegance meets style
 
 <!-- COLLECTION -->
 <div class="section">
-
-<div class="section-title">Shop by Collection</div>
-<div class="section-sub">“Discover jewellery that shines as bright as you.”</div>
+<h2>Shop by Collection</h2>
+<div class="section-sub">Discover jewellery that shines as bright as you.</div>
 
 <div class="category-row">
 
@@ -243,29 +326,13 @@ Welcome to Nitose — Where elegance meets style
 </div>
 </div>
 
-<!-- NEW DROP -->
-<div class="section">
-
-<div class="section-title">New Hot Drops!</div>
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d">
-<div class="product-info">
-<p>Antique Danglers</p>
-<p class="price">₹249 <span class="old">₹599</span> <span class="off">58% Off</span></p>
-</div>
-</div>
-
-</div>
-
 <!-- FOOTER -->
 <div class="footer">
 <h3>Nitose Jewellery</h3>
-<p>Premium Anti-Tarnish Jewellery</p>
+<p>Luxury Jewellery for Everyday Elegance</p>
 <p>📞 9625979565</p>
 </div>
 
-<!-- WHATSAPP -->
 <a href="https://wa.me/919625979565" class="whatsapp">
 <img src="https://img.icons8.com/color/96/whatsapp.png">
 </a>
