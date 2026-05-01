@@ -1,413 +1,144 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nitose Jewellery - Enterprise Luxury</title><style>
 
-<title>Nitose Jewellery</title>
+/* ================= GLOBAL RESET ================= */
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif}
+body{background:#f8f4f1;color:#111}
+a{text-decoration:none;color:inherit}
 
-<style>
+/* ================= TOPBAR ================= */
+.topbar{background:#140c0a;color:#fff;padding:12px;font-size:14px;overflow:hidden}
+.topbar span{display:inline-block;padding-left:100%;animation:scroll 16s linear infinite}
+@keyframes scroll{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
 
-body{
-margin:0;
-font-family:Arial, Helvetica, sans-serif;
-background:#f4efec;
+/* ================= NAVBAR ================= */
+.navbar{display:flex;justify-content:space-between;align-items:center;padding:20px 60px;background:#fff;position:sticky;top:0;z-index:1000;box-shadow:0 4px 20px rgba(0,0,0,0.05)}
+.logo{font-size:28px;font-weight:600;color:#5a3834}
+.nav-links{display:flex;gap:30px}
+.nav-links a{position:relative;font-size:15px}
+.nav-links a:after{content:'';position:absolute;width:0;height:2px;background:#5a3834;bottom:-5px;left:0;transition:.3s}
+.nav-links a:hover:after{width:100%}
+.nav-icons{display:flex;gap:20px;font-size:18px}
+
+/* ================= HERO ================= */
+.hero{position:relative}
+.hero img{width:100%;height:650px;object-fit:cover}
+.hero-content{position:absolute;top:50%;left:8%;transform:translateY(-50%);color:#fff}
+.hero-content h1{font-size:64px;font-weight:600}
+.hero-content p{margin-top:10px;font-size:20px}
+.hero-content button{margin-top:20px;padding:15px 30px;background:#5a3834;color:#fff;border:none;border-radius:6px;cursor:pointer}
+
+/* ================= SECTION ================= */
+.section{padding:80px 70px}
+.section-title{display:flex;justify-content:space-between;margin-bottom:40px}
+.section-title h2{font-size:34px}
+
+/* ================= PRODUCT GRID ================= */
+.product-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:30px}
+.product{background:#fff;border-radius:14px;overflow:hidden;box-shadow:0 10px 30px rgba(0,0,0,0.08);transition:.4s}
+.product:hover{transform:translateY(-10px)}
+.product img{width:100%;height:320px;object-fit:cover}
+.product-info{padding:20px}
+.price{color:#5a3834;font-weight:600}
+.old{text-decoration:line-through;color:#aaa}
+.product button{margin-top:12px;width:100%;padding:12px;background:#5a3834;color:#fff;border:none;border-radius:6px}
+
+/* ================= COLLECTION ================= */
+.collection{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:20px}
+.collection-item img{width:100%;height:200px;border-radius:12px}
+.collection-item{text-align:center}
+
+/* ================= BANNER ================= */
+.banner{background:#5a3834;color:#fff;text-align:center;padding:80px 20px}
+.banner h2{font-size:36px}
+
+/* ================= EXTRA SECTIONS (ENTERPRISE LEVEL) ================= */
+.features{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:30px}
+.feature-box{background:#fff;padding:30px;border-radius:10px;box-shadow:0 5px 20px rgba(0,0,0,0.05)}
+
+.stats{display:flex;justify-content:space-around;background:#fff;padding:50px 20px}
+.stat{text-align:center}
+.stat h3{font-size:32px;color:#5a3834}
+
+.testimonials{padding:80px 60px}
+.test-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:30px}
+.test-card{background:#fff;padding:25px;border-radius:12px;box-shadow:0 5px 15px rgba(0,0,0,0.05)}
+
+/* ================= FOOTER ================= */
+.footer{background:#140c0a;color:#fff;padding:80px 60px}
+.footer-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:40px}
+.footer p{font-size:14px;margin:6px 0}
+
+/* ================= WHATSAPP ================= */
+.whatsapp{position:fixed;bottom:25px;right:25px}
+.whatsapp img{width:65px}
+
+/* ================= MOBILE ================= */
+@media(max-width:768px){
+.nav-links{display:none}
+.hero img{height:400px}
+.hero-content h1{font-size:34px}
+.section{padding:40px 20px}
 }
 
-/* TOP BAR */
-
-.topbar{
-background:#3b2624;
-color:white;
-padding:8px;
-overflow:hidden;
-white-space:nowrap;
-}
-
-.topbar span{
-display:inline-block;
-padding-left:100%;
-animation:scroll 12s linear infinite;
-}
-
-@keyframes scroll{
-0%{transform:translateX(0)}
-100%{transform:translateX(-100%)}
-}
-
-/* NAVBAR */
-
-.navbar{
-display:flex;
-justify-content:space-between;
-align-items:center;
-padding:15px 40px;
-background:white;
-}
-
-.logo{
-font-size:22px;
-font-weight:bold;
-color:#5b3a36;
-text-decoration:none;
-}
-
-.nav-links a{
-margin:0 15px;
-text-decoration:none;
-color:#333;
-cursor:pointer;
-}
-
-.nav-buttons button{
-margin-left:10px;
-padding:8px 15px;
-border:none;
-background:#6b4a46;
-color:white;
-border-radius:5px;
-cursor:pointer;
-}
-
-/* IMAGE SLIDER */
-
-.slider{
-width:100%;
-overflow:hidden;
-}
-
-.slides{
-display:flex;
-width:300%;
-animation:slide 12s linear infinite;
-}
-
-.slides img{
-width:100%;
-height:350px;
-object-fit:cover;
-}
-
-@keyframes slide{
-0%{transform:translateX(0)}
-100%{transform:translateX(-200%)}
-}
-
-/* HERO */
-
-.hero{
-position:relative;
-text-align:center;
-color:white;
-}
-
-.hero img{
-width:100%;
-height:450px;
-object-fit:cover;
-}
-
-.hero-text{
-position:absolute;
-top:50%;
-left:50%;
-transform:translate(-50%,-50%);
-}
-
-.hero-text h1{
-font-size:42px;
-margin:0;
-}
-
-.hero-text p{
-margin-top:10px;
-}
-
-.hero-text button{
-margin-top:15px;
-padding:10px 20px;
-background:#6b4a46;
-border:none;
-color:white;
-border-radius:5px;
-cursor:pointer;
-}
-
-/* CATEGORY */
-
-.category{
-padding:50px;
-text-align:center;
-}
-
-.category-list{
-display:flex;
-justify-content:center;
-gap:40px;
-flex-wrap:wrap;
-}
-
-.category-item{
-cursor:pointer;
-text-decoration:none;
-color:black;
-}
-
-.category-item img{
-width:90px;
-height:90px;
-border-radius:50%;
-object-fit:cover;
-}
-
-.category-item p{
-margin-top:8px;
-}
-
-/* PRODUCTS */
-
-.products{
-padding:40px;
-text-align:center;
-}
-
-.product-grid{
-display:flex;
-justify-content:center;
-gap:30px;
-flex-wrap:wrap;
-}
-
-.product{
-background:white;
-padding:20px;
-border-radius:10px;
-width:220px;
-box-shadow:0 4px 10px rgba(0,0,0,0.1);
-}
-
-.product img{
-width:100%;
-height:220px;
-object-fit:cover;
-border-radius:6px;
-}
-
-.product button{
-margin-top:10px;
-background:#6b4a46;
-color:white;
-border:none;
-padding:8px 15px;
-border-radius:4px;
-cursor:pointer;
-}
-
-/* CRAFTING */
-
-.crafting{
-text-align:center;
-padding:40px;
-}
-
-/* FOOTER */
-
-.footer{
-background:#6b4a46;
-color:white;
-padding:40px;
-display:flex;
-justify-content:space-between;
-flex-wrap:wrap;
-}
-
-.payment-icons img{
-width:45px;
-margin-right:10px;
-}
-
-/* WHATSAPP */
-
-.whatsapp{
-position:fixed;
-bottom:20px;
-right:20px;
-}
-
-.whatsapp img{
-width:55px;
-}
-
-</style>
-
-</head>
-
-<body>
-
-<div class="topbar">
-<span>Premium Anti-Tarnish Jewellery | Free Shipping Above ₹999 | New Collection Live</span>
-</div>
-
-<div class="navbar">
-
-<a href="index.html" class="logo">Nitose</a>
-
+</style></head><body><div class="topbar"><span>Luxury Jewellery | Nitose Official | Free Shipping</span></div><div class="navbar">
+<div class="logo">Nitose</div>
 <div class="nav-links">
-<a href="index.html">Home</a>
-<a href="categories.html">Categories</a>
-<a href="products.html">Products</a>
-<a href="contact.html">Contact</a>
+<a href="#">Home</a>
+<a href="#">Shop</a>
+<a href="#">Collections</a>
+<a href="#">Contact</a>
 </div>
-
-<div class="nav-buttons">
-<button onclick="alert('Sign In Feature Coming Soon')">Sign In</button>
-<button onclick="alert('Cart Feature Coming Soon')">Cart</button>
-</div>
-
-</div>
-
-<div class="slider">
-
-<div class="slides">
-
-<img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d">
-<img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
-<img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
-
-</div>
-
-</div>
-
-<div class="hero">
-
+<div class="nav-icons">🔍 👤 🛒</div>
+</div><div class="hero">
 <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
-
-<div class="hero-text">
-<h1>Luxury Jewellery Collection</h1>
-<p>Elegant designs for every occasion</p>
-<a href="products.html">
+<div class="hero-content">
+<h1>Elite Jewellery</h1>
+<p>Blackrock Level Experience</p>
 <button>Shop Now</button>
-</a>
 </div>
-
-</div>
-
-<div class="category">
-
-<h2>Shop by Category</h2>
-
-<div class="category-list">
-
-<a href="products.html" class="category-item">
-<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
-<p>Earrings</p>
-</a>
-
-<a href="products.html" class="category-item">
-<img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
-<p>Pendants</p>
-</a>
-
-<a href="products.html" class="category-item">
-<img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
-<p>Necklace</p>
-</a>
-
-<a href="products.html" class="category-item">
-<img src="https://images.unsplash.com/photo-1588444650733-d7d9e5b27f02">
-<p>Bracelets</p>
-</a>
-
-<a href="products.html" class="category-item">
-<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
-<p>Combo Sets</p>
-</a>
-
-</div>
-
-</div>
-
-<div class="products">
-
-<h2>Featured Products</h2>
-
+</div><div class="section">
+<div class="section-title"><h2>Featured Products</h2></div>
 <div class="product-grid">
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
-<h4>Gold Drop Earrings</h4>
-<p>₹199</p>
-<button onclick="payNow()">Pay Now</button>
+<div class="product"><img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638"><div class="product-info"><h4>Gold Hoops</h4><p class="price">₹149 <span class="old">₹299</span></p><button>Buy Now</button></div></div>
+<div class="product"><img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427"><div class="product-info"><h4>Pendant</h4><p class="price">₹199</p><button>Buy Now</button></div></div>
+<div class="product"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f"><div class="product-info"><h4>Necklace</h4><p class="price">₹299</p><button>Buy Now</button></div></div>
 </div>
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
-<h4>Diamond Pendant</h4>
-<p>₹299</p>
-<button onclick="payNow()">Pay Now</button>
+</div><div class="section">
+<h2>Shop by Collection</h2>
+<div class="collection">
+<div class="collection-item"><img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638"><p>Earrings</p></div>
+<div class="collection-item"><img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427"><p>Bracelets</p></div>
+<div class="collection-item"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f"><p>Necklace</p></div>
 </div>
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
-<h4>Luxury Necklace</h4>
-<p>₹499</p>
-<button onclick="payNow()">Pay Now</button>
-</div>
-
-</div>
-
-</div>
-
-<div class="crafting">
-
+</div><div class="banner">
 <h2>Crafting Everyday Luxury</h2>
-
-<p>Nitose jewellery is designed to bring elegance to your everyday style. Premium anti-tarnish jewellery for modern women.</p>
-
+<p>Premium anti tarnish jewellery</p>
+</div><div class="section features">
+<div class="feature-box">Premium Quality Materials</div>
+<div class="feature-box">Fast Shipping</div>
+<div class="feature-box">Easy Returns</div>
+</div><div class="stats">
+<div class="stat"><h3>10K+</h3><p>Customers</p></div>
+<div class="stat"><h3>5K+</h3><p>Orders</p></div>
+<div class="stat"><h3>4.8⭐</h3><p>Rating</p></div>
+</div><div class="testimonials">
+<h2 style="text-align:center;margin-bottom:30px">Testimonials</h2>
+<div class="test-grid">
+<div class="test-card">Amazing quality</div>
+<div class="test-card">Loved the design</div>
+<div class="test-card">Worth every rupee</div>
 </div>
-
-<div class="footer">
-
-<div>
-<h3>Nitose</h3>
-<p>Premium Jewellery Brand</p>
-<p>Delhi, India</p>
+</div><div class="footer">
+<div class="footer-grid">
+<div><h3>Nitose</h3><p>Premium Jewellery Brand</p></div>
+<div><h3>Contact</h3><p>9625979565</p><p>nitose.official@gmail.com</p></div>
+<div><h3>Policies</h3><p>Return Policy</p><p>Privacy Policy</p></div>
 </div>
-
-<div>
-<h3>Contact</h3>
-<p>Phone: 9625979565</p>
-<p>Email: nitose.official@gmail.com</p>
-<p>Instagram: nitose_official</p>
-</div>
-
-<div>
-<h3>We Accept</h3>
-
-<div class="payment-icons">
-
-<img src="https://img.icons8.com/color/48/visa.png">
-<img src="https://img.icons8.com/color/48/mastercard.png">
-<img src="https://img.icons8.com/color/48/google-pay.png">
-<img src="https://img.icons8.com/color/48/bhim.png">
-
-</div>
-
-</div>
-
-</div>
-
-<a href="https://wa.me/919625979565" class="whatsapp">
-<img src="https://img.icons8.com/color/96/whatsapp.png">
-</a>
-
-<script>
-
-function payNow(){
-window.location.href="https://paytm.me/YOURPAYTMLINK";
-}
-
-</script>
+</div><a href="https://wa.me/919625979565" class="whatsapp"><img src="https://img.icons8.com/color/96/whatsapp.png"></a>
 
 </body>
 </html>
