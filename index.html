@@ -24,6 +24,9 @@ box-sizing:border-box;
 body{
 font-family:'Poppins', sans-serif;
 background:#f6f1ec;
+display:flex;
+flex-direction:column;
+min-height:100vh;
 color:#333;
 }
 
@@ -32,33 +35,44 @@ color:#333;
 .topbar{
 background:#3b2624;
 color:white;
-padding:8px;
-text-align:center;
-font-size:13px;
+overflow:hidden;
+white-space:nowrap;
 }
 
-/* ================= HEADER ================= */
+.topbar span{
+display:inline-block;
+padding-left:100%;
+animation:scroll 15s linear infinite;
+}
+
+@keyframes scroll{
+0%{transform:translateX(0);}
+100%{transform:translateX(-100%);}
+}
+
+/* ================= NAVBAR ================= */
 
 .navbar{
 display:flex;
-align-items:center;
 justify-content:space-between;
-padding:15px 20px;
+align-items:center;
+padding:15px 25px;
 background:#f5f0eb;
 }
 
-.menu{
-font-size:22px;
-cursor:pointer;
-}
-
-.logo{
-flex:1;
-text-align:center;
+.left{
+display:flex;
+align-items:center;
+gap:10px;
 }
 
 .logo img{
 height:35px;
+}
+
+.brand{
+font-family:'Playfair Display';
+font-size:22px;
 }
 
 .nav-right{
@@ -87,7 +101,7 @@ position:relative;
 
 .hero img{
 width:100%;
-height:350px;
+height:380px;
 object-fit:cover;
 }
 
@@ -102,7 +116,7 @@ text-align:center;
 
 .hero-text h1{
 font-family:'Playfair Display';
-font-size:40px;
+font-size:42px;
 }
 
 .hero-text p{
@@ -111,7 +125,7 @@ margin-top:10px;
 
 .hero-text button{
 margin-top:15px;
-padding:10px 20px;
+padding:10px 22px;
 background:#6b4a46;
 border:none;
 color:white;
@@ -137,10 +151,6 @@ gap:30px;
 flex-wrap:wrap;
 }
 
-.category-item{
-cursor:pointer;
-}
-
 .category-item img{
 width:90px;
 height:90px;
@@ -157,6 +167,7 @@ margin-top:8px;
 .products{
 padding:50px;
 text-align:center;
+flex:1;
 }
 
 .products h2{
@@ -167,7 +178,7 @@ margin-bottom:25px;
 .product-grid{
 display:flex;
 justify-content:center;
-gap:30px;
+gap:25px;
 flex-wrap:wrap;
 }
 
@@ -186,10 +197,6 @@ object-fit:cover;
 border-radius:8px;
 }
 
-.product h4{
-margin:10px 0;
-}
-
 .product button{
 margin-top:10px;
 background:#6b4a46;
@@ -199,19 +206,13 @@ padding:8px 15px;
 cursor:pointer;
 }
 
-/* ================= CRAFT ================= */
-
-.crafting{
-padding:40px;
-text-align:center;
-}
-
 /* ================= FOOTER ================= */
 
 .footer{
 background:#6b4a46;
 color:white;
 padding:40px;
+margin-top:auto;
 }
 
 .footer-top{
@@ -221,24 +222,14 @@ flex-wrap:wrap;
 gap:30px;
 }
 
-.footer-brand h2{
-font-family:'Playfair Display';
-margin-bottom:10px;
-}
-
 .footer-links{
 display:flex;
-gap:50px;
-}
-
-.footer-links h3{
-margin-bottom:10px;
+gap:40px;
 }
 
 .footer-links p{
 font-size:13px;
 margin-bottom:6px;
-cursor:pointer;
 }
 
 .footer-bottom{
@@ -288,22 +279,23 @@ flex-direction:column;
 <!-- TOP BAR -->
 
 <div class="topbar">
-Premium Anti-Tarnish Jewellery | Free Shipping Above ₹999
+<span>Premium Anti-Tarnish Jewellery | Free Shipping Above ₹999 | New Collection Live</span>
 </div>
 
-<!-- HEADER -->
+<!-- NAVBAR -->
 
 <div class="navbar">
 
-<div class="menu">☰</div>
-
+<div class="left">
 <div class="logo">
 <img src="IMG-20260502-WA0000.jpg">
+</div>
+<div class="brand">Nitose</div>
 </div>
 
 <div class="nav-right">
 <span>🔍</span>
-<span onclick="alert('Sign In Coming Soon')">Sign In</span>
+<span onclick="goLogin()">Sign In</span>
 </div>
 
 </div>
@@ -322,7 +314,7 @@ Our exquisite jewellery collections to shine every day
 
 <div class="hero-text">
 <h1>Shine Every Day</h1>
-<p>Elegant Jewellery Collection</p>
+<p>Elegant designs for every occasion</p>
 <button onclick="scrollToProducts()">Shop Now</button>
 </div>
 
@@ -393,23 +385,14 @@ Our exquisite jewellery collections to shine every day
 
 </div>
 
-<!-- CRAFT -->
-
-<div class="crafting">
-
-<h2>Crafting Everyday Luxury</h2>
-<p>Nitose jewellery is designed for elegance & style.</p>
-
-</div>
-
 <!-- FOOTER -->
 
 <div class="footer">
 
 <div class="footer-top">
 
-<div class="footer-brand">
-<h2>Nitose</h2>
+<div>
+<h3>Nitose</h3>
 <p>Premium Jewellery Brand</p>
 <p>📍 India</p>
 <p>📞 9625979565</p>
@@ -418,14 +401,14 @@ Our exquisite jewellery collections to shine every day
 <div class="footer-links">
 
 <div>
-<h3>Help</h3>
+<h4>Help</h4>
 <p>Track Order</p>
 <p>Returns</p>
 <p>Privacy Policy</p>
 </div>
 
 <div>
-<h3>Shop</h3>
+<h4>Shop</h4>
 <p>Earrings</p>
 <p>Bracelets</p>
 <p>Necklace</p>
@@ -447,19 +430,18 @@ Our exquisite jewellery collections to shine every day
 <img src="https://img.icons8.com/color/96/whatsapp.png">
 </a>
 
-<!-- SCRIPT -->
-
 <script>
 
 function scrollToProducts(){
-document.getElementById("products").scrollIntoView({
-behavior:'smooth'
-});
+document.getElementById("products").scrollIntoView({behavior:'smooth'});
 }
 
 function buy(product){
-let msg = "I want to buy " + product;
-window.open("https://wa.me/919625979565?text=" + encodeURIComponent(msg));
+window.open("https://wa.me/919625979565?text=I want to buy "+product);
+}
+
+function goLogin(){
+window.location.href="login.html";
 }
 
 </script>
