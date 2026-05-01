@@ -10,40 +10,49 @@
 
 <style>
 
+/* RESET */
+*{margin:0;padding:0;box-sizing:border-box;}
+
 body{
-margin:0;
 font-family:'Poppins', sans-serif;
 background:#f6f1eb;
 color:#222;
 }
 
-/* TOP MOVING BAR */
+/* TOP BAR */
 .topbar{
 background:#4a2c2a;
 color:#fff;
 padding:8px;
 overflow:hidden;
 white-space:nowrap;
+font-size:13px;
 }
-
 .topbar span{
 display:inline-block;
 padding-left:100%;
 animation:scroll 15s linear infinite;
 }
-
 @keyframes scroll{
 0%{transform:translateX(0)}
 100%{transform:translateX(-100%)}
 }
 
-/* NAVBAR */
-.navbar{
+/* HEADER */
+.header{
+background:#fff;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+position:sticky;
+top:0;
+z-index:100;
+}
+
+/* HEADER TOP */
+.header-top{
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:12px 15px;
-background:#f6f1eb;
+padding:12px 20px;
 }
 
 .logo{
@@ -52,11 +61,41 @@ align-items:center;
 gap:10px;
 font-family:'Playfair Display', serif;
 font-size:22px;
+font-weight:600;
+}
+.logo img{
+width:42px;
+border-radius:50%;
 }
 
-.logo img{
-width:40px;
-border-radius:50%;
+.header-icons{
+display:flex;
+gap:20px;
+cursor:pointer;
+}
+
+/* SEARCH BAR */
+.search-bar{
+padding:10px 20px;
+background:#f6f1eb;
+}
+.search-bar input{
+width:100%;
+padding:10px;
+border-radius:8px;
+border:1px solid #ddd;
+}
+
+/* NAV */
+.header-bottom{
+display:flex;
+justify-content:center;
+gap:25px;
+padding:10px;
+font-size:14px;
+}
+.header-bottom a{
+cursor:pointer;
 }
 
 /* HERO */
@@ -64,78 +103,70 @@ border-radius:50%;
 margin:15px;
 border-radius:15px;
 overflow:hidden;
+position:relative;
 }
-
 .hero img{
 width:100%;
-height:300px;
+height:320px;
 object-fit:cover;
+}
+.hero-text{
+position:absolute;
+bottom:20px;
+left:20px;
+color:#fff;
+}
+.hero-text button{
+margin-top:10px;
+padding:10px 18px;
+background:#d68b4e;
+border:none;
+color:white;
+border-radius:6px;
+cursor:pointer;
 }
 
 /* SECTION */
 .section{
-padding:25px 15px;
+padding:25px 20px;
 }
-
 .title{
 font-family:'Playfair Display', serif;
 font-size:26px;
+margin-bottom:10px;
 }
 
-.sub{
-font-size:14px;
-color:#666;
-margin-bottom:15px;
-}
-
-/* COLLECTION */
+/* ROW SCROLL */
 .row{
 display:flex;
-overflow-x:auto;
 gap:15px;
+overflow-x:auto;
 }
 
-.card{
-min-width:150px;
-text-align:center;
-}
-
-.card img{
-width:100%;
-height:120px;
-border-radius:12px;
-object-fit:cover;
-}
-
-/* PRODUCTS */
+/* PRODUCT */
 .product{
-min-width:220px;
+min-width:230px;
 background:#fff;
 border-radius:12px;
 overflow:hidden;
-box-shadow:0 5px 15px rgba(0,0,0,0.1);
+box-shadow:0 4px 12px rgba(0,0,0,0.08);
 }
-
 .product img{
 width:100%;
-height:200px;
+height:220px;
 object-fit:cover;
 }
-
 .info{
 padding:10px;
 }
-
 .price{
 font-weight:600;
 }
-
 .btns{
 display:flex;
 gap:8px;
 margin-top:8px;
 }
-
 .btns button{
 flex:1;
 padding:7px;
@@ -143,39 +174,43 @@ border:none;
 border-radius:5px;
 cursor:pointer;
 }
-
 .cart{background:#eee;}
 .buy{background:#d68b4e;color:white;}
 
-/* CERTIFIED */
-.cert{
-display:flex;
-justify-content:space-around;
+/* CATEGORY */
+.category{
+min-width:150px;
 text-align:center;
-font-size:13px;
+}
+.category img{
+width:100%;
+height:120px;
+border-radius:10px;
+object-fit:cover;
+}
+
+/* TESTIMONIAL */
+.testimonial{
+background:#fff;
+padding:15px;
+border-radius:10px;
+min-width:250px;
 }
 
 /* FOOTER */
 .footer{
 background:#4a2c2a;
 color:white;
-padding:30px 15px;
+padding:40px 20px;
 }
-
-.footer h3{
-margin-top:0;
-}
-
 .footer-grid{
 display:grid;
 grid-template-columns:1fr 1fr;
-gap:20px;
+gap:25px;
 }
-
-.payments img{
-width:40px;
-margin:5px;
-}
+.footer h3{margin-bottom:10px;}
+.footer p{margin:5px 0;cursor:pointer;}
+.payments img{width:40px;margin:5px;}
 
 /* WHATSAPP */
 .whatsapp{
@@ -183,110 +218,103 @@ position:fixed;
 bottom:20px;
 right:15px;
 }
-
-.whatsapp img{
-width:55px;
-}
+.whatsapp img{width:55px;}
 
 </style>
 </head>
 
 <body>
 
-<!-- TOP BAR -->
 <div class="topbar">
-<span>Welcome to Nitose — Elegant Jewellery for Everyday Confidence ✨</span>
+<span>Free Shipping | COD Available | New Collection Live ✨</span>
 </div>
 
-<!-- NAVBAR -->
-<div class="navbar">
-<div>☰</div>
+<div class="header">
+
+<div class="header-top">
 <div class="logo">
 <img src="IMG-20260502-WA0000.jpg">
 Nitose
 </div>
-<div>🔍 Sign In</div>
+
+<div class="header-icons">
+<span onclick="goPage('login.html')">👤</span>
+<span onclick="goPage('cart.html')">🛒</span>
+</div>
+</div>
+
+<div class="search-bar">
+<input type="text" placeholder="Search jewellery...">
+</div>
+
+<div class="header-bottom">
+<a onclick="goPage('index.html')">Home</a>
+<a onclick="goPage('products.html')">Shop</a>
+<a>New</a>
+<a>Bestsellers</a>
+<a>Contact</a>
+</div>
+
 </div>
 
 <!-- HERO -->
 <div class="hero">
 <img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
+<div class="hero-text">
+<h2>Everyday Elegant Jewellery</h2>
+<button onclick="goPage('products.html')">Shop Now</button>
+</div>
 </div>
 
-<!-- COLLECTION -->
+<!-- FEATURED -->
 <div class="section">
-<div class="title">Shop by Collection</div>
-<div class="sub">Discover jewellery that matches your vibe.</div>
-
-<div class="row">
-
-<div class="card"><img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427"><p>Customized Hampers</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f"><p>Trendy Necklace</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1588444650733-d7d9e5b27f02"><p>Festive Season</p></div>
-<div class="card"><img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638"><p>Chic Bracelets</p></div>
-
-</div>
-</div>
-
-<!-- NEW HOT DROPS -->
-<div class="section">
-<div class="title">New Hot Drops</div>
+<div class="title">Featured</div>
 
 <div class="row">
 
 <div class="product">
-<img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d">
+<img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
 <div class="info">
-<p>Antique Earrings</p>
-<p class="price">₹249</p>
+<p>Gold Hoops</p>
+<p class="price">₹199</p>
+<div class="btns">
+<button class="cart" onclick="addToCart('Gold Hoops')">Add</button>
+<button class="buy" onclick="payNow()">Buy</button>
+</div>
 </div>
 </div>
 
 <div class="product">
 <img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
 <div class="info">
-<p>Luxury Necklace</p>
-<p class="price">₹399</p>
-</div>
-</div>
-
-</div>
-</div>
-
-<!-- NEWEST -->
-<div class="section">
-<div class="title">Our Newest Additions</div>
-
-<div class="product">
-<img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
-<div class="info">
-<p>Gold Jhumkas</p>
-<p class="price">₹399</p>
-
+<p>Diamond Pendant</p>
+<p class="price">₹299</p>
 <div class="btns">
-<button class="cart" onclick="alert('Added to cart')">Add to Cart</button>
-<button class="buy" onclick="payNow()">Buy Now</button>
-</div>
-
+<button class="cart" onclick="addToCart('Pendant')">Add</button>
+<button class="buy" onclick="payNow()">Buy</button>
 </div>
 </div>
 </div>
 
-<!-- CERTIFIED -->
-<div class="section cert">
-<div>✔ Secure Payments</div>
-<div>✔ Assured Quality</div>
-<div>✔ Made in India</div>
-<div>✔ Fast Delivery</div>
+</div>
 </div>
 
-<!-- FOUNDER -->
+<!-- BESTSELLERS -->
 <div class="section">
-<div class="title">From Our Founder</div>
-<p>
-Nitose was built with a vision to redefine everyday jewellery...
-(10–12 line paragraph yaha tu apna likh sakta h brand story ka)
-</p>
+<div class="title">Bestsellers</div>
+<div class="row">
+<div class="product"><img src="https://images.unsplash.com/photo-1588444650733-d7d9e5b27f02"><div class="info"><p>Bracelet</p><p class="price">₹249</p></div></div>
+<div class="product"><img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d"><div class="info"><p>Jhumka</p><p class="price">₹349</p></div></div>
+</div>
+</div>
+
+<!-- TESTIMONIAL -->
+<div class="section">
+<div class="title">What Our Customers Say</div>
+<div class="row">
+<div class="testimonial">Amazing quality 😍</div>
+<div class="testimonial">Loved the packaging!</div>
+</div>
 </div>
 
 <!-- FOOTER -->
@@ -297,23 +325,22 @@ Nitose was built with a vision to redefine everyday jewellery...
 <div>
 <h3>Nitose</h3>
 <p>New Delhi, India</p>
-<p>📞 +91 9625979565</p>
+<p>📞 9625979565</p>
 <p>📧 nitose.official@gmail.com</p>
 </div>
 
 <div>
 <h3>Help</h3>
-<p>Track Order</p>
+<p onclick="goPage('track.html')">Track Order</p>
 <p>Return Policy</p>
 <p>Privacy Policy</p>
 </div>
 
 <div>
 <h3>Shop</h3>
-<p>Earrings</p>
+<p onclick="goPage('products.html')">Earrings</p>
 <p>Necklace</p>
 <p>Bracelets</p>
-<p>Rings</p>
 </div>
 
 <div>
@@ -334,15 +361,27 @@ Built with ❤️ by Smartwiz
 
 </div>
 
-<!-- WHATSAPP -->
 <a href="https://wa.me/919625979565" class="whatsapp">
 <img src="https://img.icons8.com/color/96/whatsapp.png">
 </a>
 
 <script>
+
+function goPage(page){
+window.location.href=page;
+}
+
 function payNow(){
 window.location.href="https://paytm.me/YOURPAYTMLINK";
 }
+
+function addToCart(item){
+let cart=JSON.parse(localStorage.getItem('cart'))||[];
+cart.push(item);
+localStorage.setItem('cart',JSON.stringify(cart));
+alert(item+" added to cart");
+}
+
 </script>
 
 </body>
