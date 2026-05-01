@@ -1,577 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Nitose | Timeless Luxury Jewellery</title>
-  <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Poppins:wght@300;500;600&display=swap)" rel="stylesheet">
-  <style>
-    :root {
-      --gold: #bfa36f;
-      --dark: #1c1c1c;
-      --light: #fafafa;
-      --gray: #777;
-    }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Poppins', sans-serif;
-      background-color: var(--light);
-      color: var(--dark);
-      overflow-x: hidden;
-    }
+<title>Nitose Jewellery</title>
 
-    a { text-decoration: none; color: inherit; cursor: pointer; }
-    img { width: 100%; display: block; }
+<style>
 
-    header {
-      width: 100%;
-    }
+body{
+margin:0;
+font-family:Arial, Helvetica, sans-serif;
+background:#f4efec;
+}
 
-    /* Announcement Bar */
-    .announcement {
-      background-color: var(--dark);
-      color: white;
-      padding: 6px 0;
-      text-align: center;
-      font-size: 13px;
-      overflow: hidden;
-      white-space: nowrap;
-      animation: scrollText 20s linear infinite;
-    }
+/* TOP BAR */
 
-    @keyframes scrollText {
-      0% { transform: translateX(100%); }
-      100% { transform: translateX(-100%); }
-    }
+.topbar{
+background:#3b2624;
+color:white;
+padding:8px;
+overflow:hidden;
+white-space:nowrap;
+}
 
-    /* Header Main */
-    .header-main {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 12px 20px;
-      background-color: white;
-      border-bottom: 1px solid #eee;
-    }
+.topbar span{
+display:inline-block;
+padding-left:100%;
+animation:scroll 12s linear infinite;
+}
 
-    .header-main img.logo {
-      width: 130px;
-      height: auto;
-    }
+@keyframes scroll{
+0%{transform:translateX(0)}
+100%{transform:translateX(-100%)}
+}
 
-    .header-icons {
-      display: flex;
-      gap: 18px;
-      font-size: 20px;
-    }
+/* NAVBAR */
 
-    /* Search Bar */
-    .search-bar {
-      width: 100%;
-      background-color: #f7f7f7;
-      padding: 10px 20px;
-    }
+.navbar{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:15px 40px;
+background:white;
+}
 
-    .search-bar input {
-      width: 100%;
-      padding: 10px;
-      border: 1px solid #ccc;
-      border-radius: 30px;
-      font-size: 14px;
-    }
+.logo{
+font-size:22px;
+font-weight:bold;
+color:#5b3a36;
+text-decoration:none;
+}
 
-    /* Nav */
-    nav {
-      display: flex;
-      justify-content: center;
-      background-color: white;
-      border-bottom: 1px solid #eee;
-    }
+.nav-links a{
+margin:0 15px;
+text-decoration:none;
+color:#333;
+cursor:pointer;
+}
 
-    nav a {
-      padding: 15px;
-      font-weight: 500;
-      text-transform: uppercase;
-      font-size: 13px;
-      color: var(--dark);
-      letter-spacing: 0.5px;
-    }
+.nav-buttons button{
+margin-left:10px;
+padding:8px 15px;
+border:none;
+background:#6b4a46;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
 
-    nav a:hover {
-      color: var(--gold);
-    }
+/* IMAGE SLIDER */
 
-    /* Hero */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 70vh;
-      background: url('[images.unsplash.com](https://images.unsplash.com/photo-1600181954470-4c97f06b1a7b?w=1600)') center/cover no-repeat;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
+.slider{
+width:100%;
+overflow:hidden;
+}
 
-    .hero-content {
-      text-align: center;
-      color: white;
-      background-color: rgba(0,0,0,0.4);
-      padding: 30px;
-      border-radius: 10px;
-    }
+.slides{
+display:flex;
+width:300%;
+animation:slide 12s linear infinite;
+}
 
-    .hero-content h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
+.slides img{
+width:100%;
+height:350px;
+object-fit:cover;
+}
 
-    .hero-content p {
-      font-size: 1rem;
-      margin-bottom: 20px;
-    }
+@keyframes slide{
+0%{transform:translateX(0)}
+100%{transform:translateX(-200%)}
+}
 
-    .btn {
-      background-color: var(--gold);
-      color: white;
-      padding: 10px 24px;
-      border: none;
-      border-radius: 25px;
-      font-weight: 500;
-      cursor: pointer;
-    }
+/* HERO */
 
-    /* Collection Section */
-    section {
-      padding: 40px 20px;
-    }
+.hero{
+position:relative;
+text-align:center;
+color:white;
+}
 
-    .section-title {
-      text-align: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 1.5rem;
-      margin-bottom: 20px;
-    }
+.hero img{
+width:100%;
+height:450px;
+object-fit:cover;
+}
 
-    .scroll-section {
-      display: flex;
-      overflow-x: auto;
-      gap: 15px;
-      scrollbar-width: thin;
-    }
+.hero-text{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+}
 
-    .collection-card {
-      min-width: 220px;
-      position: relative;
-      flex-shrink: 0;
-      border-radius: 6px;
-      overflow: hidden;
-    }
+.hero-text h1{
+font-size:42px;
+margin:0;
+}
 
-    .collection-card img {
-      height: 250px;
-      object-fit: cover;
-    }
+.hero-text p{
+margin-top:10px;
+}
 
-    .collection-card p {
-      position: absolute;
-      bottom: 10px;
-      left: 10px;
-      background-color: rgba(0,0,0,0.6);
-      color: white;
-      padding: 5px 10px;
-      border-radius: 3px;
-      font-size: 13px;
-    }
+.hero-text button{
+margin-top:15px;
+padding:10px 20px;
+background:#6b4a46;
+border:none;
+color:white;
+border-radius:5px;
+cursor:pointer;
+}
 
-    /* Product Cards */
-    .product-card {
-      min-width: 200px;
-      border: 1px solid #eee;
-      border-radius: 8px;
-      overflow: hidden;
-      background-color: white;
-      text-align: center;
-      flex-shrink: 0;
-    }
+/* CATEGORY */
 
-    .product-card img {
-      height: 230px;
-      object-fit: cover;
-    }
+.category{
+padding:50px;
+text-align:center;
+}
 
-    .product-card h4 {
-      font-size: 14px;
-      margin: 8px 0 4px;
-      font-weight: 500;
-    }
+.category-list{
+display:flex;
+justify-content:center;
+gap:40px;
+flex-wrap:wrap;
+}
 
-    .product-card .price {
-      font-size: 14px;
-      font-weight: 600;
-      color: var(--gold);
-    }
+.category-item{
+cursor:pointer;
+text-decoration:none;
+color:black;
+}
 
-    .product-card .old-price {
-      text-decoration: line-through;
-      color: #999;
-      font-size: 12px;
-    }
+.category-item img{
+width:90px;
+height:90px;
+border-radius:50%;
+object-fit:cover;
+}
 
-    .product-card .discount {
-      color: green;
-      font-size: 12px;
-    }
+.category-item p{
+margin-top:8px;
+}
 
-    .product-card button {
-      margin: 5px;
-      padding: 8px 12px;
-      border: none;
-      border-radius: 20px;
-      background-color: var(--gold);
-      color: white;
-      font-size: 12px;
-      cursor: pointer;
-    }
+/* PRODUCTS */
 
-    /* Trust section */
-    .trust {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      text-align: center;
-      gap: 25px;
-      font-size: 14px;
-    }
+.products{
+padding:40px;
+text-align:center;
+}
 
-    .trust div {
-      background-color: white;
-      padding: 20px;
-      border-radius: 8px;
-    }
+.product-grid{
+display:flex;
+justify-content:center;
+gap:30px;
+flex-wrap:wrap;
+}
 
-    /* Banner */
-    .image-banner {
-      height: 300px;
-      background: url('[images.unsplash.com](https://images.unsplash.com/photo-1600185364364-9e8ec1e4cd8c?w=1600)') center/cover no-repeat;
-      border-radius: 10px;
-    }
+.product{
+background:white;
+padding:20px;
+border-radius:10px;
+width:220px;
+box-shadow:0 4px 10px rgba(0,0,0,0.1);
+}
 
-    /* Brand Story */
-    .brand-story {
-      max-width: 700px;
-      margin: 0 auto;
-      text-align: center;
-      line-height: 1.8;
-      color: var(--gray);
-      font-size: 14px;
-    }
+.product img{
+width:100%;
+height:220px;
+object-fit:cover;
+border-radius:6px;
+}
 
-    /* Testimonials */
-    .testimonials {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
+.product button{
+margin-top:10px;
+background:#6b4a46;
+color:white;
+border:none;
+padding:8px 15px;
+border-radius:4px;
+cursor:pointer;
+}
 
-    .testimonial {
-      background-color: white;
-      padding: 20px;
-      border-radius: 8px;
-      font-size: 14px;
-      line-height: 1.6;
-    }
+/* CRAFTING */
 
-    .testimonial strong {
-      display: block;
-      margin-top: 10px;
-      color: var(--gold);
-    }
+.crafting{
+text-align:center;
+padding:40px;
+}
 
-    /* Footer */
-    footer {
-      background-color: var(--dark);
-      color: white;
-      padding: 40px 20px 20px;
-    }
+/* FOOTER */
 
-    .footer-columns {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      justify-content: space-between;
-    }
+.footer{
+background:#6b4a46;
+color:white;
+padding:40px;
+display:flex;
+justify-content:space-between;
+flex-wrap:wrap;
+}
 
-    .footer-column h4 {
-      font-family: 'Playfair Display', serif;
-      margin-bottom: 10px;
-      color: var(--gold);
-    }
+.payment-icons img{
+width:45px;
+margin-right:10px;
+}
 
-    .footer-column ul {
-      list-style: none;
-      font-size: 14px;
-    }
+/* WHATSAPP */
 
-    .footer-column ul li {
-      margin: 5px 0;
-      cursor: pointer;
-    }
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+}
 
-    .payments {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-top: 20px;
-    }
+.whatsapp img{
+width:55px;
+}
 
-    .payments img {
-      height: 25px;
-      width: auto;
-    }
+</style>
 
-    .footer-bottom {
-      text-align: center;
-      margin-top: 20px;
-      font-size: 13px;
-      color: #ccc;
-    }
-
-    /* Whatsapp */
-    .whatsapp-btn {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      width: 55px;
-      height: 55px;
-      border-radius: 50%;
-      background-color: #25D366;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-    }
-
-    .whatsapp-btn img {
-      width: 30px;
-      height: 30px;
-    }
-
-    /* Responsive */
-    @media(min-width: 768px) {
-      .trust {
-        grid-template-columns: repeat(4, 1fr);
-      }
-      .hero-content h1 { font-size: 2.5rem; }
-      .hero-content p { font-size: 1.2rem; }
-      .product-card { min-width: 230px; }
-    }
-  </style>
 </head>
 
 <body>
-  <header>
-    <div class="announcement">✨ Free Shipping on orders above ₹999 | COD Available | Pan India Delivery ✨</div>
 
-    <div class="header-main">
-      <img src="IMG-20260502-WA0000.jpg" alt="Nitose Logo" class="logo">
-      <div class="header-icons">
-        <span>👤</span>
-        <span>🛒</span>
-      </div>
-    </div>
+<div class="topbar">
+<span>Premium Anti-Tarnish Jewellery | Free Shipping Above ₹999 | New Collection Live</span>
+</div>
 
-    <div class="search-bar">
-      <input type="text" placeholder="Search for jewellery, collections..." />
-    </div>
+<div class="navbar">
 
-    <nav>
-      <a href="#">Home</a>
-      <a href="#">Shop</a>
-      <a href="#">New</a>
-      <a href="#">Bestsellers</a>
-      <a href="#">Contact</a>
-    </nav>
-  </header>
+<a href="index.html" class="logo">Nitose</a>
 
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h1>Where Every Sparkle Tells a Story</h1>
-      <p>Exquisite pieces crafted for your most elegant moments.</p>
-      <button class="btn">Shop Now</button>
-    </div>
-  </section>
+<div class="nav-links">
+<a href="index.html">Home</a>
+<a href="categories.html">Categories</a>
+<a href="products.html">Products</a>
+<a href="contact.html">Contact</a>
+</div>
 
-  <!-- Shop by Collection -->
-  <section>
-    <h2 class="section-title">Shop by Collection</h2>
-    <div class="scroll-section">
-      <div class="collection-card">
-        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1600181954465-0c3c48e9714a)" alt="">
-        <p>Customized Hampers</p>
-      </div>
-      <div class="collection-card">
-        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1590080875832-25d896d97b55)" alt="">
-        <p>Trendy Necklace</p>
-      </div>
-      <div class="collection-card">
-        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1590080875832-2a8dbbcb0b2a)" alt="">
-        <p>Festive Season</p>
-      </div>
-      <div class="collection-card">
-        <img src="[images.unsplash.com](https://images.unsplash.com/photo-1600181953991-c9f1b6fedde1)" alt="">
-        <p>Chic Bracelets</p>
-      </div>
-    </div>
-  </section>
+<div class="nav-buttons">
+<button onclick="alert('Sign In Feature Coming Soon')">Sign In</button>
+<button onclick="alert('Cart Feature Coming Soon')">Cart</button>
+</div>
 
-  <!-- Bestsellers -->
-  <section>
-    <h2 class="section-title">Bestsellers</h2>
-    <div class="scroll-section" id="bestsellers">
-      <!-- JS Inserts Product Cards -->
-    </div>
-  </section>
+</div>
 
-  <!-- New Hot Drops -->
-  <section>
-    <h2 class="section-title">New Hot Drops</h2>
-    <div class="scroll-section" id="newdrops">
-      <!-- JS Inserts Product Cards -->
-    </div>
-  </section>
+<div class="slider">
 
-  <!-- Trust Section -->
-  <section>
-    <div class="trust">
-      <div>💳 Secure Payments</div>
-      <div>💰 COD Available</div>
-      <div>✨ Anti Tarnish</div>
-      <div>⚡ Fast Delivery</div>
-    </div>
-  </section>
+<div class="slides">
 
-  <!-- Image Banner -->
-  <section>
-    <div class="image-banner"></div>
-  </section>
+<img src="https://images.unsplash.com/photo-1611652022419-a9419f74343d">
+<img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
+<img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
 
-  <!-- Brand Story -->
-  <section class="brand-story">
-    <h2 class="section-title">Our Story</h2>
-    <p>
-      Born from a quiet devotion to craftsmanship, <strong>Nitose</strong> celebrates the art of fine jewellery where modern grace meets timeless detail. 
-      From the first curve of a necklace to the final gleam of polish, every piece is created to embody passion and precision. 
-      We believe jewellery should whisper sophistication, not shout for attention — allowing your own presence to shine brighter. 
-      Curated by visionaries in design, Nitose is more than adornment — it’s a reflection of confidence, elegance, and individuality.
-      Inspired by every woman’s inner glow, Nitose turns precious metals into emotions captured forever. 
-      Because true luxury isn’t loud; it’s effortlessly felt.
-    </p>
-  </section>
+</div>
 
-  <!-- Testimonials -->
-  <section>
-    <h2 class="section-title">What Our Customers Say</h2>
-    <div class="testimonials">
-      <div class="testimonial">
-        “Absolutely stunning craftsmanship! I wore the Nitose bracelet to a wedding and received endless compliments.”
-        <strong>– Ananya R.</strong>
-      </div>
-      <div class="testimonial">
-        “Their packaging and finish exude complete luxury. The necklace feels premium and elegant.”
-        <strong>– Meera K.</strong>
-      </div>
-      <div class="testimonial">
-        “I’ve fallen in love with Nitose. Fast delivery and the jewellery truly shines with sophistication.”
-        <strong>– Rina S.</strong>
-      </div>
-    </div>
-  </section>
+</div>
 
-  <!-- Footer -->
-  <footer>
-    <div class="footer-columns">
-      <div class="footer-column">
-        <img src="IMG-20260502-WA0000.jpg" alt="Nitose Logo" style="width:120px;margin-bottom:10px;">
-        <p>New Delhi, India</p>
-        <p>📞 +91 98765 43210</p>
-        <p>✉️ care@nitose.com</p>
-      </div>
-      <div class="footer-column">
-        <h4>Help</h4>
-        <ul>
-          <li>Track Order</li>
-          <li>Return Policy</li>
-          <li>Privacy Policy</li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Shop</h4>
-        <ul>
-          <li>Earrings</li>
-          <li>Necklace</li>
-          <li>Bracelets</li>
-          <li>Rings</li>
-        </ul>
-      </div>
-      <div class="footer-column">
-        <h4>Payment Options</h4>
-        <div class="payments">
-          <img src="[upload.wikimedia.org](https://upload.wikimedia.org/wikipedia/commons/0/04/Visa.svg)" alt="Visa">
-          <img src="[upload.wikimedia.org](https://upload.wikimedia.org/wikipedia/commons/0/0e/Mastercard-logo.png)" alt="Mastercard">
-          <img src="[upload.wikimedia.org](https://upload.wikimedia.org/wikipedia/commons/c/cf/UPI-Logo-vector.svg)" alt="UPI">
-          <img src="[upload.wikimedia.org](https://upload.wikimedia.org/wikipedia/commons/9/98/Internet_Banking_logo.png)" alt="Net Banking">
-          <img src="[upload.wikimedia.org](https://upload.wikimedia.org/wikipedia/commons/0/0f/Cash_on_delivery.svg)" alt="COD">
-        </div>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      Built with ❤️ by Smartwiz
-    </div>
-  </footer>
+<div class="hero">
 
-  <!-- Whatsapp -->
-  <a href="[wa.me](https://wa.me/919876543210)" class="whatsapp-btn" target="_blank">
-    <img src="[upload.wikimedia.org](https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg)" alt="WhatsApp">
-  </a>
+<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
 
-  <script>
-    const products = [
-      {name:'Aurora Gold Necklace', price:2499, old:3499, img:'[images.unsplash.com](https://images.unsplash.com/photo-1600185372337-bcfc3b0a6d7d)'},
-      {name:'Serene Drop Earrings', price:899, old:1299, img:'[images.unsplash.com](https://images.unsplash.com/photo-1590080875900-9052c7e9b667)'},
-      {name:'Velvet Charm Bracelet', price:1590, old:1990, img:'[images.unsplash.com](https://images.unsplash.com/photo-1617038260897-bb78e2b4201e)'},
-      {name:'Gleam Stud Ring', price:799, old:999, img:'[images.unsplash.com](https://images.unsplash.com/photo-1589987602706-9ff99349d0c3)'},
-      {name:'Crystal Bloom Choker', price:2999, old:3999, img:'[images.unsplash.com](https://images.unsplash.com/photo-1600181954322-4319c154eb3c)'},
-      {name:'Golden Halo Bangles', price:2199, old:2699, img:'[images.unsplash.com](https://images.unsplash.com/photo-1600181954459-74ea64cbd02d)'},
-      {name:'Eternal Pearl Drops', price:1299, old:1699, img:'[images.unsplash.com](https://images.unsplash.com/photo-1590080875900-5197774d3b20)'},
-      {name:'Twilight Luxe Ring', price:999, old:1399, img:'[images.unsplash.com](https://images.unsplash.com/photo-1600181954334-9e066e79f4b6)'}
-    ];
+<div class="hero-text">
+<h1>Luxury Jewellery Collection</h1>
+<p>Elegant designs for every occasion</p>
+<a href="products.html">
+<button>Shop Now</button>
+</a>
+</div>
 
-    const bestsellersContainer = document.getElementById('bestsellers');
-    const newdropsContainer = document.getElementById('newdrops');
+</div>
 
-    products.forEach((p, i) => {
-      const card = `
-      <div class="product-card">
-        <img src="${p.img}" alt="${p.name}">
-        <h4>${p.name}</h4>
-        <p class="price">₹${p.price}</p>
-        <p class="old-price">₹${p.old}</p>
-        <p class="discount">${Math.round(((p.old - p.price)/p.old)*100)}% off</p>
-        <button onclick="addToCart('${p.name}', ${p.price})">Add to Cart</button>
-        <button onclick="location.href='#'">Buy Now</button>
-      </div>`;
-      bestsellersContainer.innerHTML += card;
-      if (i < 5) newdropsContainer.innerHTML += card;
-    });
+<div class="category">
 
-    function addToCart(name, price){
-      let cart = JSON.parse(localStorage.getItem('cart')) || [];
-      cart.push({name, price});
-      localStorage.setItem('cart', JSON.stringify(cart));
-      alert(name + " has been added to your cart!");
-    }
-  </script>
+<h2>Shop by Category</h2>
+
+<div class="category-list">
+
+<a href="products.html" class="category-item">
+<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
+<p>Earrings</p>
+</a>
+
+<a href="products.html" class="category-item">
+<img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
+<p>Pendants</p>
+</a>
+
+<a href="products.html" class="category-item">
+<img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
+<p>Necklace</p>
+</a>
+
+<a href="products.html" class="category-item">
+<img src="https://images.unsplash.com/photo-1588444650733-d7d9e5b27f02">
+<p>Bracelets</p>
+</a>
+
+<a href="products.html" class="category-item">
+<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
+<p>Combo Sets</p>
+</a>
+
+</div>
+
+</div>
+
+<div class="products">
+
+<h2>Featured Products</h2>
+
+<div class="product-grid">
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1617038220319-276d3cfab638">
+<h4>Gold Drop Earrings</h4>
+<p>₹199</p>
+<button onclick="payNow()">Pay Now</button>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1608042314453-ae338d80c427">
+<h4>Diamond Pendant</h4>
+<p>₹299</p>
+<button onclick="payNow()">Pay Now</button>
+</div>
+
+<div class="product">
+<img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f">
+<h4>Luxury Necklace</h4>
+<p>₹499</p>
+<button onclick="payNow()">Pay Now</button>
+</div>
+
+</div>
+
+</div>
+
+<div class="crafting">
+
+<h2>Crafting Everyday Luxury</h2>
+
+<p>Nitose jewellery is designed to bring elegance to your everyday style. Premium anti-tarnish jewellery for modern women.</p>
+
+</div>
+
+<div class="footer">
+
+<div>
+<h3>Nitose</h3>
+<p>Premium Jewellery Brand</p>
+<p>Delhi, India</p>
+</div>
+
+<div>
+<h3>Contact</h3>
+<p>Phone: 9625979565</p>
+<p>Email: nitose.official@gmail.com</p>
+<p>Instagram: nitose_official</p>
+</div>
+
+<div>
+<h3>We Accept</h3>
+
+<div class="payment-icons">
+
+<img src="https://img.icons8.com/color/48/visa.png">
+<img src="https://img.icons8.com/color/48/mastercard.png">
+<img src="https://img.icons8.com/color/48/google-pay.png">
+<img src="https://img.icons8.com/color/48/bhim.png">
+
+</div>
+
+</div>
+
+</div>
+
+<a href="https://wa.me/919625979565" class="whatsapp">
+<img src="https://img.icons8.com/color/96/whatsapp.png">
+</a>
+
+<script>
+
+function payNow(){
+window.location.href="https://paytm.me/YOURPAYTMLINK";
+}
+
+</script>
+
 </body>
 </html>
